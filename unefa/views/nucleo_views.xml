@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_unefa_nucleo_form">
+            <field name="name">Unefa_nucleo_form</field>
+            <field name="model">unefa.nucleo</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="nucleo">
+                    <group>
+                        <field name="nombre"/>
+                        <field name="direccion"/>
+                        <field name="telefono"/>
+                        <field name="active"/>
+                    </group>
+                </form>
+            
+            </field>
+        
+        </record>
+        
+        <record model="ir.ui.view" id="view_unefa_nucleo_tree">
+            <field name="name">Unefa_nucleo_tree</field>
+            <field name="model">unefa.nucleo</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="nucleo">
+                   
+                        <field name="nombre"/>
+                        <field name="universidad_id"/>
+                        <field name="direccion"/>
+                        <field name="telefono"/>
+                        <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_unefa_nucleo">
+            <field name="name">Unefa nucleo</field>
+            <field name="res_model">unefa.nucleo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+<!--
+        <menuitem name="nucleo" id="menu_nucleo"  action="action_unefa_nucleo" parent="menu_inicio" sequence="10"/>
+-->
+       
+    </data>
+</openerp>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_unefa_carrera_form">
+            <field name="name">Unefa_carrera_form</field>
+            <field name="model">unefa.carrera</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="carrera">
+                    <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="codigo"/>
+                        <field name="tipo"/>
+                        <field name="active"/>
+                        <field name="nucleo_ids"/>
+                    </group>
+                    </sheet>
+                </form>
+            
+            </field>
+        
+        </record>
+        
+        <record model="ir.ui.view" id="view_unefa_carrera_tree">
+            <field name="name">Unefa_carrera_tree</field>
+            <field name="model">unefa.carrera</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="carrera">
+                   
+                        <field name="nombre"/>
+                        <field name="codigo"/>
+                        <field name="nucleo_ids"/>
+                        <field name="tipo"/>
+                        <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_unefa_carrera">
+            <field name="name">Unefa carrera</field>
+            <field name="res_model">unefa.carrera</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        
+        <menuitem name="Carrera" id="unefa_submenu_carrera_configuracion" parent="unefa_menu_carrera_configuracion" action="action_unefa_carrera" sequence="10"/>
+        
+    </data>
+</openerp>
