@@ -10,5 +10,6 @@
         <menuitem name="Carrera" id="unefa_menu_carrera_configuracion" parent="unefa_menu_configuracion" sequence="20"/>
         <menuitem name="Coordinacion" id="unefa_menu_coordinacion_configuracion" parent="unefa_menu_configuracion" sequence="20"/>
         <menuitem name="Pisos y Aulas" id="unefa_menu_pisos_aulas_configuracion" parent="unefa_menu_configuracion" sequence="20"/>
+
     </data>
 </openerp>
