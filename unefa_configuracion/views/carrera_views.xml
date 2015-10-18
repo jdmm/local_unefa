@@ -30,7 +30,6 @@
             <field name="arch" type="xml">
                 <tree string="Carrera">
                     <field name="nombre" />
-                    <field name="codigo" />
                     <field name="nucleo_ids" />
                     <field name="tipo" />
                 </tree>
