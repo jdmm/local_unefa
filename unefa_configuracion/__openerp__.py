@@ -23,6 +23,7 @@
         "security/group_unefa_eval/ir.model.access.csv",
         "security/group_unefa_prof/ir.model.access.csv",
         "security/group_unefa_secret/ir.model.access.csv",
+        "data/universidad_data.xml",
         ],
     'installable': True,
     'auto_install': False,

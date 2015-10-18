@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="0">
+	  
+    <record id="main_company" model="res.company">
+		<field name="name">UNIVERSIDAD NACIONAL EXPERIMENTAL POLITÉCNICA
+DE LA FUERZA ARMADA NACIONAL</field>
+		<field name="rif">G-12345445-8</field>
+        <field name="logo" type="base64" file="unefa_configuracion/static/img/EscudoUNEFANUEVO.jpg"/>
+		<field name="street">Av. La Estancia, con Av. Caracas y Calle Holanda</field>
+		<field name="street2">Frente al Edif. Banaven, Cubo Negro, Chuao</field>
+		<field name="city">Caracas</field>
+		<field name="zip">1061</field>
+        <field name="country_id">240</field>
+        <field name="rml_header1">Excelencia Educativa Abierta al Pueblo</field>
+		<field name="country_id">240</field>
+		<field name="website">http://www.unefa.edu.ve</field>
+		<field name="phone">02129082100</field>
+		<field name="fax">02129935062</field>
+		<field name="email">decano@cip.unefa.edu.ve</field>
+	</record>
+    
+    
+    <record id="unefa_nucleo_caracas" model="unefa.nucleo">
+		<field name="nombre">Núcleo Caracas</field>
+		<field name="direccion">Av. La Estancia, con Av. Caracas y Calle Holanda,Frente al Edif. Banaven, Cubo Negro, Chuao,Caracas</field>
+		<field name="universidad_id" ref="main_company"/>
+		<field name="telefono">02129082100</field>
+	</record>
+    
+    
+    <record id="unefa_carrera_ing_sistemas" model="unefa.carrera">
+		<field name="nombre">Ingeniería de Sistemas</field>
+		<field name="tipo">larga</field>
+<!--
+		<field name="nucleo_ids" ref="unefa_nucleo_caracas"/>
+-->
+	</record>
+    
+    <record id="unefa_carrera_ing_civil" model="unefa.carrera">
+		<field name="nombre">Ingeniería Civil</field>
+		<field name="tipo">larga</field>
+<!--
+		<field name="nucleo_ids" ref="unefa_nucleo_caracas"/>
+-->
+	</record>
+    
+    
+    <record id="unefa_coordinacion_ing_sistemas_nocturno" model="unefa.coordinacion">
+		<field name="nombre">Coordinacion Ingeniería de Sistemas Nocturno</field>
+		<field name="ubicacion">Piso 10 oficina 1009</field>
+		<field name="telefono">02129936754</field>
+		<field name="email">coordinaciondesistemasnocturno@gmail.com</field>
+		<field name="descripcion">Coordinacion Encargada de ...</field>
+	</record>
+    
+    
+    <record id="unefa_pisos_10" model="unefa.pisos">
+		<field name="numero">10</field>
+		<field name="cant_banios">2</field>
+		<field name="cant_filtros">2</field>
+	</record>
+    <record id="unefa_aula_1001" model="unefa.aulas">
+		<field name="numero">1001</field>
+		<field name="tipo">normal</field>
+		<field name="cant_pupitres">40</field>
+		<field name="cant_pizarras">2</field>
+        <field name="piso_id" ref="unefa_pisos_10"/>
+	</record>
+    <record id="unefa_aula_1002" model="unefa.aulas">
+		<field name="numero">1002</field>
+		<field name="tipo">conferencia</field>
+		<field name="cant_pupitres">35</field>
+		<field name="cant_pizarras">2</field>
+        <field name="piso_id" ref="unefa_pisos_10"/>
+	</record>
+    
+	</data>
+</openerp>
