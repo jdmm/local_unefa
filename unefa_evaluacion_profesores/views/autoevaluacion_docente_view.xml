@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <openerp>
+     <data>
+         
+<!--
+         vista formulario autoevaluacion del docente
+-->
+         
+     <record model="ir.ui.view" id="view_unefa_autoevaluacion_docente_form">
+        <field name="name">unefa.autoevaluacion_docente.form</field>
+        <field name="model">unefa.autoevaluacion_docente</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="cfg_cargar_proyecto">
+                <sheet>
+                    <h2 style="color: #7c7bad">Datos Generales</h2>
+                    <group col="4" colums="4">
+                        <group>
+                            <field name="docente"/>
+                        </group>
+                        <group>
+                            <field name="fecha_evaluacion"/>
+                        </group>
+                    </group>
+                    <group col="4" colums="4">
+                        <group>
+                            <field name="sede"/>
+                            <field name="periodo_id"/>
+                            <field name="carrera"/>
+                            <field name="regimen_id"/>
+                            <field name="asignatura"/>
+                            <field name="n_secciones_asignadas"/>
+                            <field name="secciones_evaluada"/>
+                        </group>
+                        <group>
+                            <field name="coordinador"/>
+                            <field name="evaluador"/>
+                        </group>
+                    </group>
+                    
+                    
+                    <notebook>
+                        <page string="Asistencia y Puntualidad">
+                            <field name="asistencia_puntualidad_ids" on_change="onchange_cargar_datos_autoevaluacion()">
+                                <form string="Planificación, registro y control">
+                                    <field name="items_evaluacion" />
+                                    <field name="evaluacion" />
+                                </form>
+                                <tree string="Planificación, registro y control" editable="bottom" create="0">
+                                    <field name="items_evaluacion"/>
+                                    <field name="evaluacion" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Planificación, Registro y Control">
+                            <field name="planif_registro_control_ids">
+                                <form string="Planificación, registro y control">
+                                    <field name="items_evaluacion" />
+                                    <field name="evaluacion" />
+                                </form>
+                                <tree string="Planificación, registro y control" editable="bottom" create="0">
+                                    <field name="items_evaluacion"/>
+                                    <field name="evaluacion" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Interacción Docente-Estudiante">
+                            <field name="interaccion_doce_estu_ids">
+                                <form string="Planificación, registro y control">
+                                    <field name="items_evaluacion" />
+                                    <field name="evaluacion" />
+                                </form>
+                                <tree string="Planificación, registro y control" editable="bottom" create="0">
+                                    <field name="items_evaluacion"/>
+                                    <field name="evaluacion" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Praxis Académica">
+                            <field name="praxis_academica_ids">
+                                <form string="Planificación, registro y control">
+                                    <field name="items_evaluacion" />
+                                    <field name="evaluacion" />
+                                </form>
+                                <tree string="Planificación, registro y control" editable="bottom" create="0">
+                                    <field name="items_evaluacion"/>
+                                    <field name="evaluacion" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Estrategias de Enseñanza">
+                            <field name="estrategias_ense_ids">
+                                <form string="Planificación, registro y control">
+                                    <field name="items_evaluacion" />
+                                    <field name="evaluacion" />
+                                </form>
+                                <tree string="Planificación, registro y control" editable="bottom" create="0">
+                                    <field name="items_evaluacion"/>
+                                    <field name="evaluacion" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Recursos Didácticos">
+                            <field name="recursos_didacticos">
+                                <form string="Planificación, registro y control">
+                                    <field name="items_evaluacion" />
+                                    <field name="evaluacion" />
+                                </form>
+                                <tree string="Planificación, registro y control" editable="bottom" create="0">
+                                    <field name="items_evaluacion"/>
+                                    <field name="evaluacion" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Evaluación de los Aprendizajes">
+                            <field name="evaluacion_aprendizaje_ids">
+                                <form string="Planificación, registro y control">
+                                    <field name="items_evaluacion" />
+                                    <field name="evaluacion" />
+                                </form>
+                                <tree string="Planificación, registro y control" editable="bottom" create="0">
+                                    <field name="items_evaluacion"/>
+                                    <field name="evaluacion" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook> 
+                    
+                    <notebook>
+                        <page string="Aspectos Positivos">
+                            <p>Señale cuatro (4) aspectos que considere positivos de su desempeño docente.</p>
+                            <field name="aspecto_positivo"/>
+                        </page>
+                        <page string="Aspectos a Cambiar">
+                            <p>Si tuviera que generar en su desempeño docente, ¿Cuáles aspectos cambiaria?</p>
+                            <field name="aspectos_cambiar"/>
+                        </page>
+                        <page string="Calificación Personal">
+                            
+                            <p>En la escala  del 1 al 20, ¿Cual considera usted es la calificación que le corresponde según su desempeño docente? Explique.</p>
+                            <group>
+                                <field name="calificacion" style="width: 10%%"/>
+                            </group>
+                            <field name="califi_personal"/>
+                        </page>
+                        <page string="Aspectos a Mejorar">
+                            <p>Señale cuatro (4) aspectos que usted considera contribuirian con un mejor desempeño docente en esta universidad.</p>
+                            <field name="aspectos_mejoras"/>
+                        </page>
+                        <page string="Comentarios Adicionales">
+                            <field name="comentarios_adic"/>
+                        </page>
+                    </notebook> 
+                </sheet>
+            </form>
+        </field>
+    </record>
+     
+<!--
+     vista lista autoevaluacion del docente
+-->
+     
+     <record model="ir.ui.view" id="view_unefa_autoevaluacion_docente_tree">
+        <field name="name">unefa.autoevaluacion_docente.form</field>
+        <field name="model">unefa.autoevaluacion_docente</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Supervisión en clase">
+                <field name="docente"/>
+                <field name="evaluador"/>
+                <field name="fecha_evaluacion"/>
+            </tree>
+        </field>
+     </record>
+    
+<!--
+    actions autoevaluacion del docente
+-->
+    
+    <record model="ir.actions.act_window" id="action_unefa_autoevaluacion_docente">
+        <field name="name">Autoevaluación del Personal Docente</field>
+        <field name="res_model">unefa.autoevaluacion_docente</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    
+    
+    
+<!--
+    vista para configurar los items de asistencia y puntualidad autoevaluacion del docente
+-->
+
+     <record model="ir.ui.view" id="view_unefa_asis_puntualidad_form">
+        <field name="name">unefa.items.asis.puntualidad.form</field>
+        <field name="model">unefa.items.asis.puntualidad</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Asistencia y Puntualidad">
+                <sheet>
+                    <group>
+                        <field name="item_evaluacion"/>
+                        <field name="item_activo"/>
+                    </group>
+                 </sheet>
+            </form>
+        </field>
+     </record>
+
+      <record model="ir.ui.view" id="view_unefa_items_asistencia_puntualidad_tree">
+        <field name="name">unefa.items.asis.puntualidad.tree</field>
+        <field name="model">unefa.items.asis.puntualidad</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="item_evaluacion"/>
+                <field name="item_activo"/>
+            </tree>
+        </field>
+     </record>
+     
+      <record model="ir.actions.act_window" id="action_unefa_asis_puntualidad">
+        <field name="name">Items de Evaluación</field>
+        <field name="res_model">unefa.items.asis.puntualidad</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    
+    
+    
+<!--
+    vista para configurar los items de planificacion registro y control autoevaluacion del docente
+-->
+
+     <record model="ir.ui.view" id="view_unefa_items_planificacion_registro_control_form">
+        <field name="name">unefa.items.planificacion.registro.control.form</field>
+        <field name="model">unefa.items.planificacion.registro.control</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Asistencia y Puntualidad">
+                <sheet>
+                    <group>
+                        <field name="item_evaluacion"/>
+                        <field name="item_activo"/>
+                    </group>
+                 </sheet>
+            </form>
+        </field>
+     </record>
+
+      <record model="ir.ui.view" id="view_unefa_items_planificacion_registro_control_tree">
+        <field name="name">unefa.items.planificacion.registro.control.tree</field>
+        <field name="model">unefa.items.planificacion.registro.control</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="item_evaluacion"/>
+                <field name="item_activo"/>
+            </tree>
+        </field>
+     </record>
+     
+      <record model="ir.actions.act_window" id="action_unefa_items_planificacion_registro_control">
+        <field name="name">Items de Evaluación</field>
+        <field name="res_model">unefa.items.planificacion.registro.control</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    
+<!--
+    vista para configurar los items de interacción docente-estudiante autoevaluacion del docente
+-->
+
+     <record model="ir.ui.view" id="view_unefa_items_interaccion_docente_estudiante_form">
+        <field name="name">unefa.items.interaccion.docente.estudiante.form</field>
+        <field name="model">unefa.items.interaccion.docente.estudiante</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Asistencia y Puntualidad">
+                <sheet>
+                    <group>
+                        <field name="item_evaluacion"/>
+                        <field name="item_activo"/>
+                    </group>
+                 </sheet>
+            </form>
+        </field>
+     </record>
+
+      <record model="ir.ui.view" id="view_unefa_items_interaccion_docente_estudiante__tree">
+        <field name="name">unefa.items.interaccion.docente.estudiante.tree</field>
+        <field name="model">unefa.items.interaccion.docente.estudiante</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="item_evaluacion"/>
+                <field name="item_activo"/>
+            </tree>
+        </field>
+     </record>
+     
+      <record model="ir.actions.act_window" id="action_unefa_items_interaccion_docente_estudiante_">
+        <field name="name">Items de Evaluación</field>
+        <field name="res_model">unefa.items.interaccion.docente.estudiante</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    
+    
+    
+<!--
+    vista para configurar los items de praxis academica autoevaluacion del docente
+-->
+
+     <record model="ir.ui.view" id="view_unefa_items_praxis_academica_form">
+        <field name="name">unefa.items.praxis.academica.form</field>
+        <field name="model">unefa.items.praxis.academica</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Asistencia y Puntualidad">
+                <sheet>
+                    <group>
+                        <field name="item_evaluacion"/>
+                        <field name="item_activo"/>
+                    </group>
+                 </sheet>
+            </form>
+        </field>
+     </record>
+
+      <record model="ir.ui.view" id="view_unefa_items_praxis_academica__tree">
+        <field name="name">unefa.items.praxis.academica.tree</field>
+        <field name="model">unefa.items.praxis.academica</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="item_evaluacion"/>
+                <field name="item_activo"/>
+            </tree>
+        </field>
+     </record>
+     
+      <record model="ir.actions.act_window" id="action_unefa_items_praxis_academica">
+        <field name="name">Items de Evaluación</field>
+        <field name="res_model">unefa.items.praxis.academica</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    
+    
+    
+<!--
+    vista para configurar los items de estrategia_enseñanza autoevaluacion del docente
+-->
+
+     <record model="ir.ui.view" id="view_unefa_items_estrategia_ensenanza_form">
+        <field name="name">unefa.items.estrategia.ensenanza.form</field>
+        <field name="model">unefa.items.estrategia.ensenanza</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Asistencia y Puntualidad">
+                <sheet>
+                    <group>
+                        <field name="item_evaluacion"/>
+                        <field name="item_activo"/>
+                    </group>
+                 </sheet>
+            </form>
+        </field>
+     </record>
+
+      <record model="ir.ui.view" id="view_unefa_items_estrategia_ensenanza__tree">
+        <field name="name">unefa.items.estrategia.ensenanza.tree</field>
+        <field name="model">unefa.items.estrategia.ensenanza</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="item_evaluacion"/>
+                <field name="item_activo"/>
+            </tree>
+        </field>
+     </record>
+     
+    <record model="ir.actions.act_window" id="action_unefa_estrategia_ensenanza_academica">
+        <field name="name">Items de Evaluación</field>
+        <field name="res_model">unefa.items.estrategia.ensenanza</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    
+<!--
+    vista para configurar los items de recursos didacticos autoevaluacion del docente
+-->
+
+     <record model="ir.ui.view" id="view_unefa_items_recur_didacticos_form">
+        <field name="name">unefa.items.recur.didacticos.form</field>
+        <field name="model">unefa.items.recur.didacticos</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Asistencia y Puntualidad">
+                <sheet>
+                    <group>
+                        <field name="item_evaluacion"/>
+                        <field name="item_activo"/>
+                    </group>
+                 </sheet>
+            </form>
+        </field>
+     </record>
+
+      <record model="ir.ui.view" id="view_unefa_items_recur_didacticos_tree">
+        <field name="name">unefa.items.recur.didacticos.tree</field>
+        <field name="model">unefa.items.recur.didacticos</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="item_evaluacion"/>
+                <field name="item_activo"/>
+            </tree>
+        </field>
+     </record>
+     
+    <record model="ir.actions.act_window" id="action_unefa_recur_didacticos">
+        <field name="name">Items de Evaluación</field>
+        <field name="res_model">unefa.items.recur.didacticos</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>   
+    
+    
+    
+    
+    
+<!--
+    vista para configurar los items de evalluación de los aprendizajes autoevaluacion del docente
+-->
+
+     <record model="ir.ui.view" id="view_unefa_items_eval_aprendizaje_form">
+        <field name="name">unefa.items.eval.aprendizaje.form</field>
+        <field name="model">unefa.items.eval.aprendizaje</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Asistencia y Puntualidad">
+                <sheet>
+                    <group>
+                        <field name="item_evaluacion"/>
+                        <field name="item_activo"/>
+                    </group>
+                 </sheet>
+            </form>
+        </field>
+     </record>
+
+      <record model="ir.ui.view" id="view_unefa_items_eval_aprendizaje_tree">
+        <field name="name">unefa.items.eval.aprendizaje.tree</field>
+        <field name="model">unefa.items.eval.aprendizaje</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="item_evaluacion"/>
+                <field name="item_activo"/>
+            </tree>
+        </field>
+     </record>
+     
+    <record model="ir.actions.act_window" id="action_unefa_eval_aprendizaje">
+        <field name="name">Items de Evaluación</field>
+        <field name="res_model">unefa.items.eval.aprendizaje</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>   
+    
+
+<!--
+    menus de autoevaluacion del docente
+-->
+
+    <menuitem name="Autoevaluación Docente" id="menu_autoevaluacion_docente" parent="inicio_unefa_supervision_clase" action="action_unefa_autoevaluacion_docente" sequence="20"/>
+    
+    <menuitem name="Autoevaluación del Docente" id="auto_eval_docente" parent="inicio_unefa_configuracion" sequence="20"/>
+    <menuitem name="Items Asistencia y Puntualidad" id="menu_items_asistencia_puntualidad" parent="auto_eval_docente" action="action_unefa_asis_puntualidad" sequence="10"/>
+    <menuitem name="Items Planificación, Registro y Control" id="menu_items_planificacion_registro_control" parent="auto_eval_docente" action="action_unefa_items_planificacion_registro_control" sequence="20"/>
+    <menuitem name="Items Interacción Docente-Estudiante" id="menu_items_planificacion_registro_control" parent="auto_eval_docente" action="action_unefa_items_interaccion_docente_estudiante_" sequence="30"/>
+    <menuitem name="Items Praxis Académica" id="menu_items_praxis_academica" parent="auto_eval_docente" action="action_unefa_items_praxis_academica" sequence="40"/>
+    <menuitem name="Items Estrategia de Enseñanzas" id="menu_items_estrategia_ensenanza" parent="auto_eval_docente" action="action_unefa_estrategia_ensenanza_academica" sequence="50"/>
+    <menuitem name="Items Recursos Didactitos" id="menu_items_recursos_didacticos_2" parent="auto_eval_docente" action="action_unefa_recur_didacticos" sequence="60"/>
+    <menuitem name="Items Evaluación de los Aprendizajes" id="menu_items_eval_aprendizaje" parent="auto_eval_docente" action="action_unefa_eval_aprendizaje" sequence="70"/>
+
+    </data>
+</openerp>

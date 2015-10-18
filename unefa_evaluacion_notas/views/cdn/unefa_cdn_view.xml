@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <openerp>
+     <data>
+    <record model="ir.ui.view" id="view_unefa_cdn_form">
+        <field name="name">unefa_cdn.form</field>
+        <field name="model">unefa.cdn</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Corte">
+
+                <sheet>
+                <group>
+<!--
+                <field name="corte_id" invisible="1"/>
+                <field name="evaluacion_continua_ids" />
+                <field name="cdn_id" invisible="1"/>
+-->
+                
+                <notebook>
+                    <page string="Evaluaciones Continuas"> 
+                        <field name="evaluacion_continua_ids" on_change="onchange_lista_estudiantes_prueba()"/>
+<!--
+                        <form string="Evaluaciones Continuas">
+                            <field name="estudiante_id"/>
+                            <field name="ep1" />
+                            <field name="ep2" />
+                            <field name="ep3" />
+                            <field name="ep4" />
+                            <field name="nota_final" />
+                            <field name="nota_letras" />
+                        </form>
+                        <tree string="Evaluaciones Continuas" editable="bottom" create="0" delete="0">
+                            <field name="estudiante_id"/>
+                            <field name="ep1" />
+                            <field name="ep2" />
+                            <field name="ep3" />
+                            <field name="ep4" />
+                            <field name="nota_final" />
+                            <field name="nota_letras" />
+                        </tree>                        
+-->
+                    </page>
+                </notebook>
+
+                </group>
+
+                </sheet>
+            </form>
+        </field>
+        
+    </record>
+    
+    <record model="ir.ui.view" id="view_unefa_cdn_tree">
+         <field name="name">unefa_cdn.tree</field>
+        <field name="model">unefa.cdn</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Corte">
+
+                <field name="corte_id" />
+                <field name="evaluacion_continua_ids" />
+                <field name="cdn_id" />
+
+            </tree>
+        </field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="action_unefa_cdn">
+        <field name="name">Corte</field>
+        <field name="res_model">unefa.cdn</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form,tree</field>
+    </record>
+
+    </data>
+</openerp>
+

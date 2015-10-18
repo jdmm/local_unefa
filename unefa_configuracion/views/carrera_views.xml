@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_unefa_carrera_form">
+            <field name="name">Unefa_carrera_form</field>
+            <field name="model">unefa.carrera</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="carrera">
+                    <sheet>
+                        <header>
+                        <h2 style="color:#7C7BAD"><center>Carrera</center></h2>
+                        </header>
+                    <group>
+                        <field name="nombre" string="Nombre de la Carrera" style="width:40%"/>
+                        <field name="codigo" invisible="1" />
+                        <field name="tipo" string="Tipo de Carrera" style="width:40%"/>
+                        <field name="active" invisible="1"/>
+                        <field name="nucleo_ids"/>
+                    </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="view_unefa_carreras_tree">
+         <field name="name">unefa.carrera.tree</field>
+        <field name="model">unefa.carrera</field>
+        <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Carrera">
+                    <field name="nombre" />
+                    <field name="codigo" />
+                    <field name="nucleo_ids" />
+                    <field name="tipo" />
+                </tree>
+            </field>
+        </record>
+        
+       
+        <record model="ir.actions.act_window" id="action_unefa_carreras">
+            <field name="name">Unefa carrera</field>
+            <field name="res_model">unefa.carrera</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+            Aqui se registran las Carreras a impartir
+            </p>
+        </field>
+        </record>
+        
+        
+        <menuitem name="Carrera" id="unefa_submenu_carrera_configuracion" parent="unefa_menu_carrera_configuracion" action="action_unefa_carreras" sequence="10"/>
+        
+    </data>
+</openerp>

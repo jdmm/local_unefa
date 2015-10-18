@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <openerp>
+     <data>
+    <record model="ir.ui.view" id="view_unefa_plan_actividades_academicas_form">
+        <field name="name">unefa_plan_actividades_academicas.form</field>
+        <field name="model">unefa.plan.actividades.academicas</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Plan de Actividades Academicas">
+                <header> 
+                   <button name="aprobar_pde" string = "Aprobar"/>
+                   <button name="generar_pde" string = "Generar Plan Actividades Academicas"/>
+                   <field name="state" widget="statusbar" statusbar_visible="borrador,asignado" />
+                </header> 
+                <sheet>
+                <h2>
+                    <center>
+                        <label string="Plan de Actividades Academicas" />
+                    </center>
+                </h2>
+                <group col="6" colums="6">
+                <field name="fecha" on_change="onchange_cargar_datos()"/>
+                <field name="carrera" invisible="1"/>
+                <field name="sede" invisible="1"/>
+                <field name="regimen" invisible="1"/>
+                <field name="aula" invisible="1"/>
+                <field name="ciProfesor" invisible="1"/>
+                <field name="nombreProfesor" invisible="1"/>
+                <field name="apellidoProfesor" invisible="1"/>
+                <field name="nombreCoordinador" invisible="1"/>
+                <field name="emailProfesor" invisible="1"/>
+                <field name="telefonoProfesor" invisible="1"/>
+                <field name="seccion" invisible="1"/>
+                <field name="periodoAcademico" invisible="1"/>
+                <field name="dias" invisible="1"/>
+                <field name="recibidoPor" invisible="1"/>
+<!--
+                <field name="nuevo_item_id" />
+-->
+                </group>
+                
+		<group >
+		<field name="semestre_id" style="width: 40%%" />
+		<field name="materia_id" style="width: 40%%" attrs="{'invisible':[('semestre_id','=',False)]}"/>
+		<field name="seccion_id" style="width: 40%%" attrs="{'invisible':[('materia_id','=',False)]}"/>
+                </group>
+		
+                <notebook attrs="{'invisible':[('seccion_id','=',False)]}">
+                
+                <page string="Planificacion"> 
+                    <field name="cortes_ids">
+                        <form string="Planificacion de Pdaa">
+                            <field name="semestre" />
+                            <field name="fechaEntrega" />
+                            <field name="numeroUnidades" />
+                            <field name="objetivoUnidad" />
+                            <field name="contenido" />
+                            <field name="estrategiaEnsenanza" />
+                            <field name="tipos_evaluacion" />
+                        </form>
+                        <tree string="Planificacion de Pdaa" editable="bottom">
+                            <field name="semestre" />
+                            <field name="fechaEntrega" />
+                            <field name="numeroUnidades" />
+                            <field name="objetivoUnidad" />
+                            <field name="contenido" />
+                            <field name="estrategiaEnsenanza" />
+                            <field name="tipos_evaluacion" />
+                        </tree>
+                        </field>
+                </page>
+                </notebook>
+                
+                <notebook attrs="{'invisible':[('seccion_id','=',False)]}">
+                
+                <page string="Plan de Evaluacion"> 
+                    <field name="plan_ids">
+                        <form string="Plan de Evaluacion">
+                            <field name="actividades_evaluativas" />
+                            <field name="porcentaje" />
+                            <field name="fecha_aplicacion" />
+                        </form>
+                        
+                        <tree string="Primer de Evaluacion" editable="bottom">
+                            <field name="actividades_evaluativas" />
+                            <field name="porcentaje" />
+                            <field name="fecha_aplicacion" />
+                           
+                        </tree>
+                        </field>
+                </page>
+                </notebook>
+                
+                <notebook attrs="{'invisible':[('seccion_id','=',False)]}">
+                
+                <page string="Referencias"> 
+                    <field name="referencias_ids">
+                        <form string="Tres Referencias">
+                            <field name="referencia_bibliografica" class="oe_inline" placeholder = "Referencias Bibliograficas..."/>
+                            <field name="referencia_hemerografica" class="oe_inline" placeholder = "Referencias Hemerograficas..." />
+                            <field name="referencia_electronicas" class="oe_inline" placeholder = "Referencias Electronicas..." />
+                        </form>
+                        
+                        <tree string="Tres Referencias" editable="bottom">
+                            <field name="referencia_bibliografica" class="oe_inline" placeholder = "Referencias Bibliograficas..."/>
+                            <field name="referencia_hemerografica" class="oe_inline" placeholder = "Referencias Hemerograficas..." />
+                            <field name="referencia_electronicas" class="oe_inline" placeholder = "Referencias Electronicas..." />
+                        </tree>
+                        </field>
+                </page>
+                </notebook>
+                
+                
+                </sheet>  
+            </form>
+        </field>
+    </record>
+    
+    <record model="ir.ui.view" id="view_unefa_plan_actividades_academicas_tree">
+         <field name="name">unefa_plan_actividades_academicas.tree</field>
+        <field name="model">unefa.plan.actividades.academicas</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Plan de Evaluacion">
+<!--
+		<field name="carrera" />
+                <field name="sede" />
+                <field name="regimen" />
+                <field name="aula" />
+                <field name="ciProfesor" />
+                <field name="nombreProfesor" />
+                <field name="apellidoProfesor" />
+                <field name="nombreCoordinador" />
+                <field name="emailProfesor" />
+                <field name="telefonoProfesor" />
+                <field name="seccion" />
+                <field name="periodoAcademico" />
+                <field name="dias" />
+                <field name="recibidoPor" />
+-->
+		<field name="semestre_id" />
+		<field name="materia_id" />
+		<field name="seccion_id" />
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_unefa_plan_actividades_academicas">
+        <field name="name">Plan de Actividades Academicas</field>
+        <field name="res_model">unefa.plan.actividades.academicas</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem name="Plan de Actividades Academicas" id="menu_unefa_pdaa" parent="menu_unefa_gestion_corte" sequence="30" />
+    <menuitem name="PDAA" id="menu_unefa_pdaa_1" parent="menu_unefa_pdaa" action="action_unefa_plan_actividades_academicas" sequence="10" />
+    </data>
+</openerp>
+

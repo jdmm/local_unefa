@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <report id="id_unefa_convalidacion_report_qweb"
+            string="Convalidación"
+            model="unefa.convalidacion"
+            report_type="qweb-pdf"
+            file="unefa_convalidacion.id_unefa_convalidacion_report_qweb"
+            name="unefa_convalidacion.id_unefa_convalidacion_report_qweb"
+            menu="True"/>
+	</data>
+
+</openerp>

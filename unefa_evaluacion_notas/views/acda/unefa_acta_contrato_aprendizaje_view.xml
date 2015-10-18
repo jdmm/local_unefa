@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <openerp>
+     <data>
+    <record model="ir.ui.view" id="view_unefa_acta_contrato_aprendizaje_form">
+        <field name="name">unefa_acta_contrato_aprendizaje.form</field>
+        <field name="model">unefa.acta.contrato.aprendizaje</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Acta Contrato Aprendizaje">
+                <header> 
+                   <button name="aprobar_pde" string = "Aprobar"/>
+                   <button name="generar_pde" string = "Generar Acta de contrato de aprendizaje"/>
+                   <field name="state" widget="statusbar" statusbar_visible="borrador,asignado" />
+                </header> 
+                
+                <sheet> <h2> <center> <label string="Acta de Contrato de Aprendizaje" /> </center> 
+                </h2> <group>
+                        <field name="fecha" on_change="onchange_cargar_datos()"/>
+                        <field name="nucleo" invisible="1"/> 
+                        <field name="carrera" invisible="1" /> 
+                        <field name="division" invisible="1"/>
+                        <field name="aula" invisible="1"/> 
+                        <field name="piso" invisible="1"/> 
+                        <field name="ciProfesor" invisible="1"/> 
+                        <field name="nombreProfesor" invisible="1"/> 
+                        <field name="apellidoProfesor" invisible="1"/> 
+                        <field name="nombreCoordinador" invisible="1"/> 
+                        
+			<field name="semestre_id" style="width: 40%%" />
+			<field name="materia_id" style="width: 40%%" attrs="{'invisible':[('semestre_id','=',False)]}"/>
+                        <field name="seccion_id" style="width: 40%%" attrs="{'invisible':[('materia_id','=',False)]}"/> 
+                         
+                        
+                        <field name= "firmaDigitalProfesor" invisible="1"/> 
+                        <field name="firmaDigitalCoordinador" invisible="1"/>
+                        </group>
+                <notebook attrs="{'invisible':[('seccion_id','=',False)]}">
+                <page string="Lista ACDA"> 
+                    <field name="cortes_ids" on_change="onchange_lista_estudiantes_prueba()">
+                        <form string="Primer Corte de Evaluacion">
+                            <field name="nombreEstudiante_id" /> 
+                            <field name="apellidoEstudiante" /> 
+                            <field name="ciEstudiante" />
+<!--
+                             <field name="firmaDigitalEstudiante" />
+-->
+<!--
+                            <field name="firmaDigitalEstudiante" />
+-->
+                        </form>
+                        <tree string="LISTA Acda" editable="bottom">
+                             <field name="nombreEstudiante_id" /> 
+                            <field name="apellidoEstudiante" /> 
+                            <field name="ciEstudiante" />
+<!--
+                             <field name="firmaDigitalEstudiante" />
+-->
+<!--
+                            <field name="firmaDigitalEstudiante" />
+-->
+                        </tree>
+                        </field>
+                </page>
+                </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record model="ir.ui.view" id="view_unefa_acta_contrato_aprendizaje_tree">
+         <field name="name">unefa_acta_contrato_aprendizaje.tree</field>
+        <field name="model">unefa.acta.contrato.aprendizaje</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Acta Contrato Aprendizaje">
+                 <field name="fecha" on_change="onchange_cargar_datos()"/>
+		 <field name="nucleo" invisible="1"/> 
+		 <field name="carrera" invisible="1" /> 
+		 <field name="division" invisible="1"/>
+		 <field name="aula" invisible="1"/> 
+		 <field name="piso" invisible="1"/> 
+		 <field name="ciProfesor" invisible="1"/> 
+		 <field name="nombreProfesor" invisible="1"/> 
+		 <field name="apellidoProfesor" invisible="1"/> 
+		 <field name="nombreCoordinador" invisible="1"/> 
+                        
+		 <field name="semestre_id" />
+		 <field name="materia_id" />
+		 <field name="seccion_id" /> 
+                         
+                        
+		 <field name= "firmaDigitalProfesor" invisible="1"/> 
+		 <field name="firmaDigitalCoordinador" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_unefa_acta_contrato_aprendizaje">
+        <field name="name">Acta Contrato Aprendizaje</field>
+        <field name="res_model">unefa.acta.contrato.aprendizaje</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+<!--
+    <menuitem name="Planificacion de Corte" id="menu_unefa_planificacion_corte6" sequence="10"  /> 
+    <menuitem name="Pdaa" id="menu_unefa_planificacion_corte_pdaa"  parent="menu_unefa_planificacion_corte6" sequence="10" /> 
+    <menuitem name="Acta contrato aprendizaje" id="menu_pdaa" parent="menu_unefa_planificacion_corte_pdaa" action="action_unefa_acta_contrato_aprendizaje" sequence="10" />
+-->
+    
+<!--
+    <menuitem name="SIGECOOR" id="SIGECOOR" sequence="10"  /> 
+    <menuitem name="GESTION DE CORTE" id="menu_unefa_gestion_corte"  parent="SIGECOOR" sequence="10" /> 
+-->
+    <menuitem name="Acta Contrato de Aprendizaje" id="menu_unefa_acda" parent="menu_unefa_gestion_corte" sequence="40" />
+    <menuitem name="ACDA" id="menu_unefa_acda_1" parent="menu_unefa_acda" action="action_unefa_acta_contrato_aprendizaje" sequence="10" />
+    </data>
+</openerp>
+

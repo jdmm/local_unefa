@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_unefa_res_company_evaluador,unefa_res_company_evaluador,model_res_company,group_unefa_evaluador,1,0,0,0
+access_unefa_nucleo_evaluador,unefa.nucleo_evaluador,model_unefa_nucleo,group_unefa_evaluador,1,0,0,0
+access_unefa_carrera_evaluador,unefa.carrera_evaluador,model_unefa_carrera,group_unefa_evaluador,1,0,0,0
+access_unefa_coordinacion_evaluador,unefa.coordinacion_evaluador,model_unefa_coordinacion,group_unefa_evaluador,1,0,0,0
+access_unefa_pisos_evaluador,unefa.pisos_evaluador,model_unefa_pisos,group_unefa_evaluador,1,0,0,0
+access_unefa_aulas_evaluador,unefa.aulas_evaluador,model_unefa_aulas,group_unefa_evaluador,1,0,0,0

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    <record model="ir.ui.view" id="view_unefa_inscripcion_form">
+        <field name="name">unefa.seguimiento.form</field>
+        <field name="model">unefa.seguimiento</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Seguimiento de Notas">
+                
+            <sheet>
+                    <group>
+                        <field name="pensum_id" style="width:40%%"/>
+                        <field name="carrera_id" style="width:40%%"/>
+                    </group>
+                
+            <notebook>
+                <page>
+                    <field name="seg_notas_ids">
+                    <form>
+                        <field name="periodo_id" />
+                        <field name="semestre_id" />
+                        <field name="seccion_id" />
+                        <field name="materia_id" />
+                        <field name="nota_final_id" />
+                        <field name="nota_rep_id" />
+                        <field name="observaciones" />
+                    </form>
+                    <tree string="Asignar Prueba de Reparacion" editable="bottom">
+                        <field name="periodo_id" />
+                        <field name="semestre_id" />
+                        <field name="seccion_id" />
+                        <field name="materia_id" />
+                        <field name="nota_final_id" />
+                        <field name="nota_rep_id" />
+                        <field name="observaciones" />
+                    </tree>
+                    </field>
+                </page>
+            </notebook>
+            </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record model="ir.ui.view" id="view_unefa_seguimiento_tree">
+        <field name="name">unefa.seguimiento.tree</field>
+        <field name="model">unefa.seguimiento</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="XXXYYYZZZ">
+                <field name="seg_notas_ids" />
+            </tree>
+        </field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="action_seguimiento">
+        <field name="name">seguimiento</field>
+        <field name="res_model">unefa.seguimiento</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form,tree</field>
+    </record>
+    
+    
+        <menuitem name="Seguimiento de Notas" id="unefa_menu_seguimiento" parent="unefa_menu_seguimiento_desplegable" action="action_seguimiento" sequence="20"/>
+    
+    </data>
+</openerp>
+

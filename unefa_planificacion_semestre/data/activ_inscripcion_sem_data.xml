@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        
+        <record id="inicio_actividades" model="unefa.cronograma_actividades_semestre">
+            <field name="actividad">Inicio de las actividades académicas del semestre.</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="explicacion_actividades" model="unefa.cronograma_actividades_semestre">
+            <field name="actividad">Explicación y discusión de la Planificación de las Actividades Académicas a los estudiantes.</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="explicacion_plan_evaluacion" model="unefa.cronograma_actividades_semestre">
+            <field name="actividad">Explicación discusión del Plan de Evaluación.</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="actividad_academica" model="unefa.cronograma_actividades_semestre">
+            <field name="actividad">Actividad Académica.</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="firma_contrato_aprendizaje" model="unefa.cronograma_actividades_semestre">
+            <field name="actividad">Elaboración y firma del Contrato de Aprendizaje.</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="entrega_contrato_aprendizaje" model="unefa.cronograma_actividades_semestre">
+            <field name="actividad">Entrega de la Planificación, Plan de Evaluación y Contrato de Aprendizaje firmado a las coordinaciones de carrera.</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="entrega_resultados_1corte" model="unefa.cronograma_actividades_semestre">
+            <field name="actividad">Entrega y discusión de los resultados del primer corte a los estudiantes.</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="entrega_resultados_1corte_coord" model="unefa.cronograma_actividades_semestre">
+            <field name="actividad">Entrega de los resultados de las evaluaciones del primer corte a las coordinaciones de carreras.</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="aplicacion_instrumento_desempeno" model="unefa.cronograma_actividades_semestre">
+            <field name="actividad">Aplicación del instrumento de opinión del desempeño docente por parte de los estudiantes (Fase I).</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="entrega_resultados_2corte" model="unefa.cronograma_actividades_semestre">
+            <field name="actividad">Entrega y discusión de los resultados de las evaluaciones del segundo corte a los estudiantes.</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="entrega_resultados_2corte_coord" model="unefa.cronograma_actividades_semestre">
+            <field name="actividad">Entrega de los resultados de las evaluaciones del segundo corte a las coordinaciones decarrera.</field>
+            <field name="activo">True</field>
+            </record>
+        <record id="entrega_resultados_3corte" model="unefa.cronograma_actividades_semestre">
+            <field name="actividad">Entrega y discusión de los resultados de las evaluaciones del tercer corte a los estud¡antes.</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="fin_aplicacion_instrumento_desempeno" model="unefa.cronograma_actividades_semestre">
+            <field name="actividad">Fin de la aplicación del instrumento de opinión del desempeño docente por parte de los estudiantes (Fase I).</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="entrega_resultados_3corte_coord" model="unefa.cronograma_actividades_semestre">
+            <field name="actividad">Entrega de los resultados de las evaluaciones del tercer corte a las coordinaciones de carrera.</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="entrega_resultados_4corte" model="unefa.cronograma_actividades_semestre">
+            <field name="actividad">Entrega y discusión de los resultados de las evaluaciones del cuarto corte a los estudiante.</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="entrega_resultados_4corte_coord" model="unefa.cronograma_actividades_semestre">
+            <field name="actividad">Entrega de los resultados de las evaluaciones del cuarto corte a las Coordinaciones de carreras.</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="entrega_solvencia_academica" model="unefa.cronograma_actividades_semestre">
+            <field name="actividad">Entrega de la Solvencia Académica por parte de los profesores a las coordinaciones de carrera.</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="aplicacion_pruebas_reparacion" model="unefa.cronograma_actividades_semestre">
+            <field name="actividad">Aplicación de las Pruebas de Reparación.</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="entrega_resultados_reparacion" model="unefa.cronograma_actividades_semestre">
+            <field name="actividad">Entrega y discusión de los resultados de las evaluaciones de Reparación a los estudiante.</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="entrega_solvencia_academica_reparacion" model="unefa.cronograma_actividades_semestre">
+            <field name="actividad">Entrega de la Solvencia Académica acta de calificaciones de Reparación del periodo académico a las coordinaciones de carrera.</field>
+            <field name="activo">True</field>
+        </record>
+
+    </data>
+</openerp>

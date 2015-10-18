@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        
+        <record id="estudiantes_1" model="unefa.lista_estudiantes_prueba">
+            <field name="actividad">Ernesto Colmenarez</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="estudiantes_2" model="unefa.lista_estudiantes_prueba">
+            <field name="actividad">Amanda Blanco</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="estudiantes_3" model="unefa.lista_estudiantes_prueba">
+            <field name="actividad">Maria Maldonado</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="estudiantes_4" model="unefa.lista_estudiantes_prueba">
+            <field name="actividad">Jose Colmenarez</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="estudiantes_5" model="unefa.lista_estudiantes_prueba">
+            <field name="actividad">Onerby Blanco</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="estudiantes_6" model="unefa.lista_estudiantes_prueba">
+            <field name="actividad">Angela Zapata</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="estudiantes_7" model="unefa.lista_estudiantes_prueba">
+            <field name="actividad">Francisco Colemanarez</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="estudiantes_8" model="unefa.lista_estudiantes_prueba">
+            <field name="actividad">Pepito Perez</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="estudiantes_9" model="unefa.lista_estudiantes_prueba">
+            <field name="actividad">Chimultrufia Castro</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="estudiantes_10" model="unefa.lista_estudiantes_prueba">
+            <field name="actividad">Chilindrina Flores</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="estudiantes_11" model="unefa.lista_estudiantes_prueba">
+            <field name="actividad">Wisin Sindiente</field>
+            <field name="activo">True</field>
+            </record>
+        <record id="estudiantes_12" model="unefa.lista_estudiantes_prueba">
+            <field name="actividad">Yandel Sinwisin</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="estudiantes_13" model="unefa.lista_estudiantes_prueba">
+            <field name="actividad">Carlito Ladilla</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="estudiantes_14" model="unefa.lista_estudiantes_prueba">
+            <field name="actividad">Daniela Alvarado</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="estudiantes_15" model="unefa.lista_estudiantes_prueba">
+            <field name="actividad">Caraoticas Negras</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="estudiantes_16" model="unefa.lista_estudiantes_prueba">
+            <field name="actividad">Caraoticas Blancas</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="estudiantes_17" model="unefa.lista_estudiantes_prueba">
+            <field name="actividad">Frijoles Conhuesito</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="estudiantes_18" model="unefa.lista_estudiantes_prueba">
+            <field name="actividad">Fidel Castro</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="estudiantes_19" model="unefa.lista_estudiantes_prueba">
+            <field name="actividad">Obama Negro</field>
+            <field name="activo">True</field>
+        </record>
+        <record id="estudiantes_20" model="unefa.lista_estudiantes_prueba">
+            <field name="actividad">Maduro Podrido</field>
+            <field name="activo">True</field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <openerp>
+     <data>
+    <record model="ir.ui.view" id="view_unefa_evaluacion_pde_form">
+        <field name="name">unefa_evaluacion_pde.form</field>
+        <field name="model">unefa.evaluacion.pde</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Evaluacion">
+
+                <sheet>
+                <group>
+<!--
+                <field name="corte_pde_ids" />
+-->
+                <field name="evaluacion" />
+                <field name="ponderacion" />
+                <field name="fecha" />
+                <field name="contenido" />
+                <field name="semana" />
+                <field name="observaciones" />
+
+                </group>
+
+                </sheet>
+            </form>
+        </field>
+        
+    </record>
+    
+    <record model="ir.ui.view" id="view_unefa_corte_pde_tree">
+         <field name="name">unefa_evaluacion_pde.tree</field>
+        <field name="model">unefa.evaluacion.pde</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Evaluacion">
+
+<!--
+                <field name="corte_pde_ids" />
+-->
+                <field name="evaluacion" />
+                <field name="ponderacion" />
+                <field name="fecha" />
+                <field name="contenido" />
+                <field name="semana" />
+                <field name="observaciones" />
+
+            </tree>
+        </field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="action_unefa_evaluacion_pde">
+        <field name="name">Evaluacion</field>
+        <field name="res_model">unefa.evaluacion.pde</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form,tree</field>
+    </record>
+
+    </data>
+</openerp>
+

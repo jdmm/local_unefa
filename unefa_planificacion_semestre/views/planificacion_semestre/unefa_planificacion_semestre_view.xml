@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <openerp>
+     <data>
+         
+<!--
+         vista form para cargar la planificación semestral
+-->
+
+        <record model="ir.ui.view" id="view_unefa_planificacion_semestre_form">
+            <field name="name">planificacion_semestre.form</field>
+            <field name="model">unefa.planificacion_semestre</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Planificación de semestre">
+                    <header>
+                        <button name="aprobar_planificacion" string ="Aprobar" states="borrador" type="object"/>
+                        <button name="generar_cronograma" string = "Generar Cronograma"/>
+                        <button name="generar_planificacion" string = "Generar Planificación"/>
+                        <field name="state" widget="statusbar" statusbar_visible="borrador,aprobado" />
+                    </header>
+                    <sheet>
+                        <group col="4" colums="4">
+                            <field name="carrera_id" />
+                            <field name="fecha" readonly="True"/>
+                            <field name="periodo_id" widget="selection"/>
+                        </group>
+                        <notebook>
+                            <page string="Cronograma de inscripción">
+                                <field name="actividad_ids" on_change="onchange_cronograma_inscripcion()">
+                                <form string="Cronograma de inscripción">
+                                    <field name="actividad_id" />
+                                    <field name="fecha_desde" />
+                                    <field name="fecha_hasta" on_change="onchange_fecha(fecha_desde,fecha_hasta)" />
+                                </form>
+                                <tree string="Cronograma de inscripción" editable="bottom" create="0" delete="0">
+                                    <field name="actividad_id" />
+                                    <field name="fecha_desde" />
+                                    <field name="fecha_hasta" on_change="onchange_fecha(fecha_desde,fecha_hasta)" />
+                                </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                        <notebook>
+                            <page string="Cronograma de actividades">
+                                <field name="cronograma_actividad_ids"  on_change="onchange_cronograma_semestre()">
+                                <form string="Cronograma de actividades">
+                                    <field name="actividad_id" widget="selection" />
+                                    <field name="fecha_desde" />
+                                    <field name="fecha_hasta" />
+                                    <field name="actividades" />
+                                    <field name="responsable_id" widget="selection"/>
+                                    <field name="observaciones" />
+                                </form>
+                                <tree string="Cronograma de inscripción" editable="bottom" create="0" delete="0">
+                                    <field name="actividad_id" widget="selection"/>
+                                    <field name="fecha_desde" />
+                                    <field name="fecha_hasta" on_change="onchange_fecha_actividad(fecha_desde,fecha_hasta)" />
+                                    <field name="actividades" />
+                                    <field name="responsable_id" widget="selection"/>
+                                </tree>
+                                </field>
+                                <field name="observaciones" class="oe_inline" placeholder = "Observaciones..."/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+<!--
+        vista tree para cargar la planificación semestral
+-->
+    
+        <record model="ir.ui.view" id="view_unefa_planificacion_semestre_tree">
+            <field name="name">unefa.planificacion_semestre.tree</field>
+            <field name="model">unefa.planificacion_semestre</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Planificación semestre">
+                    <field name="carrera_id" />
+                    <field name="fecha" />
+                    <field name="periodo_id" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+        
+<!--
+        action para la carga de planificaión semestral
+-->
+        
+        <record model="ir.actions.act_window" id="action_unefa_planificacion_semestre">
+            <field name="name">Planificación Semestral</field>
+            <field name="res_model">unefa.planificacion_semestre</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+<!--
+    Menus para la carga de planificación semestral
+-->
+
+<!--
+    <menuitem name="Gestión planificación de semestre" id="ges_planificacio_semestre_id" />
+-->
+    <menuitem name="Planificación de semestre" id="planificacion_semestre_id" parent="unefa_configuracion.unefa_menu_principal_gestion" sequence="40"/>
+    <menuitem name="Planificación de semestre" id="planificacion_semestre_id_desplegable" parent="planificacion_semestre_id" />
+    <menuitem name="Planificación de semestre" id="planificacion_semestre2_id" parent="planificacion_semestre_id_desplegable" action="action_unefa_planificacion_semestre" sequence="5"/>
+
+
+    </data>
+</openerp>

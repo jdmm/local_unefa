@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <openerp>
+     <data>
+    <record model="ir.ui.view" id="view_unefa_contenido_pde_form">
+        <field name="name">unefa_contenido_pde.form</field>
+        <field name="model">unefa.contenido.pde</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Contenido">
+
+                <sheet>
+                <group>
+                <field name="contenido" />
+
+                </group>
+
+                </sheet>
+            </form>
+        </field>
+        
+    </record>
+    
+    <record model="ir.ui.view" id="view_unefa_contenido_pde_tree">
+         <field name="name">unefa_contenido_pde.tree</field>
+        <field name="model">unefa.contenido.pde</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Contenido">
+
+                <field name="contenido" />
+
+            </tree>
+        </field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="action_unefa_contenido_pde">
+        <field name="name">Contenido</field>
+        <field name="res_model">unefa.contenido.pde</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form,tree</field>
+    </record>
+
+    </data>
+</openerp>
+

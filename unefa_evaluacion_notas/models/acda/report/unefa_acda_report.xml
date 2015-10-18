@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+<!--
+        cambie de id_template_unefa_pensum_report_qweb 
+-->
+		<report id="id_template_unefa_acda_report_qweb"
+			string="Acda"
+			model="unefa.acta.contrato.aprendizaje"
+			report_type="qweb-pdf"
+			file="unefa_acta_contrato_aprendizaje.id_template_unefa_acda_report_qweb"
+            name="unefa.acta.contrato.aprendizaje.id_template_unefa_acda_report_qweb"
+            menu="True"/>
+	</data>
+</openerp>

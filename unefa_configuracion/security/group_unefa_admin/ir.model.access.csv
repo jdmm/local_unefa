@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_unefa_res_company_admin,unefa_res_company_admin,model_res_company,group_unefa_administrador,1,1,1,1
+access_unefa_nucleo_admin,unefa.nucleo_admin,model_unefa_nucleo,group_unefa_administrador,1,1,1,1
+access_unefa_carrera_admin,unefa.carrera_admin,model_unefa_carrera,group_unefa_administrador,1,1,1,1
+access_unefa_coordinacion_admin,unefa.coordinacion_admin,model_unefa_coordinacion,group_unefa_administrador,1,1,1,1
+access_unefa_pisos_admin,unefa.pisos_admin,model_unefa_pisos,group_unefa_administrador,1,1,1,1
+access_unefa_aulas_admin,unefa.aulas_admin,model_unefa_aulas,group_unefa_administrador,1,1,1,1

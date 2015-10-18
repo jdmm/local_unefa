@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+<!--
+        <menuitem name="Reparacion" id="unefa_menu_principal_gestion" sequence="10"/>
+-->
+        <menuitem name="Gestionar Reparación" id="unefa_menu_gestion_rep" parent="unefa_configuracion.unefa_menu_principal_gestion"  sequence="90"/>
+        <menuitem name="Reparación" id="unefa_menu_rep" parent="unefa_menu_gestion_rep"  sequence="10"/>
+        
+    </data>
+</openerp>

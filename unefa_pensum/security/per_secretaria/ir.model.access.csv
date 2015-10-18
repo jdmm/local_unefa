@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_unefa_materia_secret,unefa.materia,model_unefa_materia,unefa_configuracion.group_unefa_secretaria,1,1,1,1
+access_unefa_semestre_gas_secret,unefa.semestre,model_unefa_semestre,unefa_configuracion.group_unefa_secretaria,1,1,1,1
+access_unefa_pensum_gas_secret,unefa.pensum,model_unefa_pensum,unefa_configuracion.group_unefa_secretaria,1,1,1,1
+access_unefa_contenido_gas_secret,unefa.contenido,model_unefa_contenido,unefa_configuracion.group_unefa_secretaria,1,1,1,1
+access_unefa_subcontenido_gas_secret,Unefa.subcontenido,model_unefa_subcontenido,unefa_configuracion.group_unefa_secretaria,1,1,1,1

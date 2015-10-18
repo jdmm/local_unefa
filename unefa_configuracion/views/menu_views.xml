@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+<!--
+        <menuitem name="nucleo" id="menu_nucleo"  action="action_unefa_nucleo" parent="menu_inicio" sequence="10"/>
+-->
+        <menuitem name="SIGECOORD" id="unefa_menu_principal_gestion" sequence="10"/>
+<!--
+        <menuitem name="Inicio" id="unefa_menu_inicio_gestion"  parent="unefa_menu_principal_gestion" sequence="20"/>
+-->
+        <menuitem name="Configuración" id="unefa_menu_configuracion" parent="unefa_menu_principal_gestion"  sequence="110"/>
+        <menuitem name="Carrera" id="unefa_menu_carrera_configuracion" parent="unefa_menu_configuracion" sequence="10"/>
+        <menuitem name="Coordinacion" id="unefa_menu_coordinacion_configuracion" parent="unefa_menu_configuracion" sequence="20"/>
+        <menuitem name="Pisos y Aulas" id="unefa_menu_pisos_aulas_configuracion" parent="unefa_menu_configuracion" sequence="30"/>
+    </data>
+</openerp>

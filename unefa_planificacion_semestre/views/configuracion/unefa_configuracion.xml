@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_unefa_conf_periodo_academico_form">
+            <field name="name">unefa_conf_periodo_academico.form</field>
+            <field name="model">unefa.conf.periodo_academico</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Configuración">
+                    <sheet>
+                        <group col="4" colums="4">
+                            <field name="periodo_academico" />
+                            <field name="fecha" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+                        
+        <record model="ir.ui.view" id="view_unefa_conf_periodo_academico_tree">
+            <field name="name">unefa_conf_periodo_academico.tree</field>
+            <field name="model">unefa.conf.periodo_academico</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="configuracion período académico">
+                    <field name="periodo_academico"/>
+                    <field name="fecha"/>
+                </tree>
+            </field>
+        </record>
+                    
+        <record model="ir.actions.act_window" id="action_unefa_conf_periodo_academico">
+            <field name="name">Configuración</field>
+            <field name="res_model">unefa.conf.periodo_academico</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+<!--
+        <record model="ir.ui.view" id="view_unefa_conf_seccion_form">
+            <field name="name">unefa_conf_seccion.form</field>
+            <field name="model">unefa.conf.seccion</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Configuración Sección">
+                    <sheet>
+                        <group col="4" colums="4">
+                            <field name="seccion" />
+                            <field name="fecha" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+                        
+        <record model="ir.ui.view" id="view_unefa_conf_seccion_tree">
+            <field name="name">unefa]_conf_seccion.tree</field>
+            <field name="model">unefa.conf.seccion</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Configuracion sección">
+                    <field name="seccion"/>
+                    <field name="fecha"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_unefa_conf_seccion">
+            <field name="name">Sección</field>
+            <field name="res_model">unefa.conf.seccion</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+-->
+        
+        
+        
+        
+<!--
+        vista for para configurar las actividades de inscripción
+-->
+
+        <record model="ir.ui.view" id="view_unefa_cronograma_actividades_form">
+            <field name="name">unefa_cronograma_actividades.form</field>
+            <field name="model">unefa.cronograma_actividades_inscripcion</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Configuración Sección">
+                    <sheet>
+                        <group>
+                            <field name="actividad" />
+                            <field name="activo" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+<!--
+        vista tree para configurar las actividades de inscripción
+-->
+    
+        <record model="ir.ui.view" id="view_unefa_cronograma_actividades_tree">
+            <field name="name">unefa.cronograma_actividades.tree</field>
+            <field name="model">unefa.cronograma_actividades_inscripcion</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Actividades de Inscripción">
+                    <field name="actividad" />
+                    <field name="activo" />
+                </tree>
+            </field>
+        </record>
+
+<!--
+        action para configurar las actividades de inscripción
+-->
+        
+        <record model="ir.actions.act_window" id="action_unefa_cronograma_actividades">
+            <field name="name">Actividades de Inscripción</field>
+            <field name="res_model">unefa.cronograma_actividades_inscripcion</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        
+        
+<!--
+        vista for para configurar las actividades de inscripción
+-->
+
+        <record model="ir.ui.view" id="view_unefa_cronograma_actividades_semestre_form">
+            <field name="name">unefa_cronograma_actividades_semestre.form</field>
+            <field name="model">unefa.cronograma_actividades_semestre</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Configuración Sección">
+                    <sheet>
+                        <group>
+                            <field name="actividad" />
+                            <field name="activo" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+<!--
+        vista tree para configurar las actividades de inscripción
+-->
+    
+        <record model="ir.ui.view" id="view_unefa_cronograma_actividades_semestre_tree">
+            <field name="name">unefa.cronograma_actividades_semestre.tree</field>
+            <field name="model">unefa.cronograma_actividades_semestre</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Actividades de Inscripción">
+                    <field name="actividad" />
+                    <field name="activo" />
+                </tree>
+            </field>
+        </record>
+
+<!--
+        action para configurar las actividades de inscripción
+-->
+        
+        <record model="ir.actions.act_window" id="action_unefa_cronograma_actividades_semestre">
+            <field name="name">Actividades del Semestre</field>
+            <field name="res_model">unefa.cronograma_actividades_semestre</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+<!--
+        vista for para crear los responsables de las actividades
+-->
+
+        <record model="ir.ui.view" id="view_unefa_responsable_form">
+            <field name="name">unefa.responsable.form</field>
+            <field name="model">unefa.responsable</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Responsable de la actividad">
+                    <sheet>
+                        <group>
+                            <field name="responsable" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+<!--
+        vista tree para crear los responsables de las actividades
+-->
+    
+        <record model="ir.ui.view" id="view_unefa_responsable_tree">
+            <field name="name">unefa.responsable.tree</field>
+            <field name="model">unefa.responsable</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Responsable de la actividad">
+                    <field name="responsable" />
+                </tree>
+            </field>
+        </record>
+
+<!--
+        action para crear los responsables de las actividades
+-->
+        
+        <record model="ir.actions.act_window" id="action_responsable">
+            <field name="name">Responsables de Actividades</field>
+            <field name="res_model">unefa.responsable</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+
+        
+        
+        
+        
+<!--
+        <menuitem name="Configuración" id="configuracion_id" parent="ges_planificacio_semestre_id" sequence="60"/>
+-->
+        
+        <menuitem name="Cronograma Académico" id="menu_activ_inscrip" parent="unefa_configuracion.unefa_menu_configuracion" sequence="40"/>
+        <menuitem name="Actividades de Inscripción" id="inicio_actividades_inscripcion" parent="menu_activ_inscrip" action="action_unefa_cronograma_actividades" sequence="10"/>
+        <menuitem name="Actividades del Semestre" id="inicio_actividades_inscripcion_semestre" parent="menu_activ_inscrip" action="action_unefa_cronograma_actividades_semestre" sequence="20"/>
+        <menuitem name="Responsable de Actividades" id="inicio_responsable_actividad" parent="menu_activ_inscrip" action="action_responsable" sequence="30"/>
+        
+        <menuitem name="Período académico" id="periodo_academico_id" parent="unefa_configuracion.unefa_menu_configuracion" sequence="50"/>
+        <menuitem name="Período académico" id="periodo_academico_id2" parent="periodo_academico_id" action="action_unefa_conf_periodo_academico" sequence="10"/>
+        
+<!--
+        <menuitem name="Sección" id="seccion_id" parent="unefa_config.unefa_menu_configuracion" sequence="60"/>
+        <menuitem name="Sección" id="seccion_id2" parent="seccion_id" action="action_unefa_conf_seccion" sequence="10"/>
+        
+-->
+        
+    </data>
+</openerp>

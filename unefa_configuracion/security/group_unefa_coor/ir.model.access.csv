@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_unefa_res_company_coordinador,unefa_res_company_coordinador,model_res_company,group_unefa_coordinador,1,0,0,0
+access_unefa_nucleo_coordinador,unefa.nucleo_coordinador,model_unefa_nucleo,group_unefa_coordinador,1,0,0,0
+access_unefa_carrera_coordinador,unefa.carrera_coordinador,model_unefa_carrera,group_unefa_coordinador,1,0,0,0
+access_unefa_coordinacion_coordinador,unefa.coordinacion_coordinador,model_unefa_coordinacion,group_unefa_coordinador,1,0,0,0
+access_unefa_pisos_coordinador,unefa.pisos_coordinador,model_unefa_pisos,group_unefa_coordinador,1,0,0,0
+access_unefa_aulas_coordinador,unefa.aulas_coordinador,model_unefa_aulas,group_unefa_coordinador,1,0,0,0

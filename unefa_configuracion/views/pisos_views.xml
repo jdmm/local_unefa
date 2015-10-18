@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_unefa_pisos_form">
+            <field name="name">Unefa_pisos_form</field>
+            <field name="model">unefa.pisos</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Pisos">
+                    <sheet>
+                         <header>
+                        <h2 style="color:#7C7BAD"><center>Pisos y Aulas</center></h2>
+                        </header>
+                    <group>
+                        <field name="numero"/>
+                        <field name="cant_banios"/>
+                        <field name="cant_filtros"/>
+                        <field name="active" invisible="1"/>
+                        <field name="aulas_id">
+                        <tree editable="botton">
+                            <field name="numero"/>
+                            <field name="tipo"/>
+                            <field name="cant_pupitres"/>
+                            <field name="cant_pizarras"/>
+                        </tree>
+                        
+                        </field>
+                    </group>
+                    </sheet>
+                </form>
+            
+            </field>
+        
+        </record>
+        
+        <record model="ir.ui.view" id="view_unefa_pisos_tree">
+            <field name="name">Unefa_pisos_tree</field>
+            <field name="model">unefa.pisos</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="pisos">
+                   
+                        <field name="numero"/>
+                        <field name="cant_banios"/>
+                        <field name="cant_filtros"/>
+                        <field name="aulas_id"/>
+                        <field name="active" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_unefa_pisos">
+            <field name="name">Unefa Pisos y Aulas</field>
+            <field name="res_model">unefa.pisos</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+            Aqui se registran los Pisos y las Aulas
+            </p>
+        </field>
+        </record>
+        
+        <menuitem name="Pisos" id="menu_pisos"  action="action_unefa_pisos" parent="unefa_menu_pisos_aulas_configuracion" sequence="10"/>
+       
+    </data>
+</openerp>

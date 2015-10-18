@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<template id="id_template_unefa_pensum_qweb">
+    <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="report.external_layout">
+                <div class="page">
+                    
+                 <h5><span><justify>    
+            <div class="row mt32">
+                     <h3>
+                        <span><center><strong>Pensum</strong></center></span>
+                        </h3>
+                        
+            
+               </div> 
+                 </justify></span></h5>     
+                     
+             </div>
+            </t>
+        </t>
+    </t> 
+</template>
+    
+    
+</data>
+</openerp>
+
+
+
+
+
+
+

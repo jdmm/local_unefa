@@ -1,0 +1,68 @@
+<openerp>
+    <data>
+        <record id="view_unefa_convalidacion_form" model="ir.ui.view">
+            <field name="name">unefa_convalidacion.form</field>
+            <field name="model">unefa.convalidacion</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Unefa convalidacion">
+                <group>
+					<field name="cedula_id" style="width: 20%%" on_change="onchange_nombre_estudiante(cedula_id)"/>                        
+					<field name="user_id"/>                        
+                    <field name="current_date"/>
+                    <field name="condicion" style="width: 20%%"/>
+<!--
+					<field name="estado_civil" style="width: 20%%" />
+-->
+					<field name="carrera"/>
+					<field name="regimen"/>
+					<field name="pensum" style="width: 20%%" />
+					<field name="semestre" style="width: 20%%" attrs="{'invisible':[('pensum', '=', False)]}"/>
+					<field name="periodo" style="width: 20%%" attrs="{'invisible':[('semestre', '=', False)]}"/>
+					<field name="materia_id" style="width: 50%%" attrs="{'invisible':[('periodo', '=', False)]}"/>
+                    
+               </group>
+               </form>
+            </field>
+            
+        </record>    
+        
+        
+        <record model="ir.ui.view" id="view_unefa_convalidacion_tree">
+        <field name="name">unefa_convalidacion.tree</field>
+        <field name="model">unefa.convalidacion</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Unefa convalidacion">
+				
+					<field name="cedula_id" select="1"/>
+					<field name="current_date" select="1"/>
+					<field name="regimen" select="1"/>
+					<field name="pensum" select="1"/>
+					<field name="semestre" select="1"/>
+					<field name="periodo" select="1"/>  
+                    
+			</tree>
+		</field>
+		</record>  
+        
+        <record model="ir.actions.act_window" id="action_unefa_convalidacion">
+        <field name="name">Módulo de Convalidación</field>
+        <field name="res_model">unefa.convalidacion</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+		
+		</record>
+    
+        
+    <menuitem name="Convalidación y Equivalencia" id="menu_unefa_convalidacion" parent="unefa_configuracion.unefa_menu_principal_gestion" sequence="100"/>
+
+    <menuitem name="Convalidación" id="menu_unefa_convalidacion_inicio" parent="menu_unefa_convalidacion" action="action_unefa_convalidacion" sequence="10" />
+<!--
+    <menuitem name="Equivalencia" id="menu_unefa_convalidacion_inicio" parent="menu_unefa_convalidacion" action="action_unefa_equivalencia" sequence="20"/>
+-->
+
+    </data>
+</openerp>
+
+

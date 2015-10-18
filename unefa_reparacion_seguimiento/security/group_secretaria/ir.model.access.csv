@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access.unefa_cronograma_rep_secretaria,unefa.cronograma_rep,model_unefa_cronograma_rep,unefa_configuracion.group_unefa_secretaria,1,1,1,1
+access.unefa_crono_prueba_secretaria,unefa.crono_prueba,model_unefa_crono_prueba,unefa_configuracion.group_unefa_secretaria,1,1,1,1
+access.unefa_prueba_rep_secretaria,unefa.prueba_rep,model_unefa_prueba_rep,unefa_configuracion.group_unefa_secretaria,1,1,1,1
+access.unefa_notas_rep_secretaria,unefa.notas_rep,model_unefa_notas_rep,unefa_configuracion.group_unefa_secretaria,1,1,1,1
+access.unefa_seguimiento_secretaria,unefa.seguimiento,model_unefa_seguimiento,unefa_configuracion.group_unefa_secretaria,1,1,1,1
+access.unefa_seg_notas_secretaria,unefa.seg_notas,model_unefa_seg_notas,unefa_configuracion.group_unefa_secretaria,1,1,1,1

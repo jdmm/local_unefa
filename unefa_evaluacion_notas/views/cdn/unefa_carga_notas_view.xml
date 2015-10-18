@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <openerp>
+     <data>
+        
+    <record model="ir.ui.view" id="view_unefa_carga_notas_form">
+        <field name="name">unefa_carga_notas.form</field>
+        <field name="model">unefa.carga.notas</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Carga de Notas">
+                 <header> 
+                   <button name="aprobar_pde" string = "Aprobar"/>
+                   <button name="generar_pde" string = "Generar Carga de Nota"/>
+                   <field name="state" widget="statusbar" statusbar_visible="borrador,asignado" />
+                </header> 
+                
+               <sheet>
+                <h2>
+                    <center>
+                        <label string="Carga de Nota Semestral" />
+                    </center>
+                </h2>
+                
+                <group col="6" colums="6">
+                <field name="fecha" />
+                <field name="nucleo" invisible="1"/>
+                <field name="carrera" invisible="1"/>
+                <field name="division" invisible="1"/>
+                <field name="aula" invisible="1"/>
+                <field name="piso" invisible="1"/>
+                <field name="ciProfesor" invisible="1"/>
+                <field name="materia" invisible="1"/>
+                <field name="nombreProfesor" on_change="onchange_cargar_datos()"/>
+                <field name="apellidoProfesor"/>
+                <field name="nombreEstudiante" invisible="1"/>
+                <field name="apellidoEstudiante" invisible="1"/>
+                <field name="ciEstudiante" invisible="1"/>
+                <field name="seccion" invisible="1"/>
+                <field name="semestre" invisible="1"/>
+                <field name="firmaDigitalProfesor" invisible="1"/>
+                <field name="firmaDigitalCoordinador" invisible="1"/>
+<!--
+                <field name="corte" />
+-->
+                </group>
+		
+		<group >
+		<field name="semestre_id" style="width: 40%%" />
+		<field name="materia_id" style="width: 40%%" attrs="{'invisible':[('semestre_id','=',False)]}"/>
+		<field name="seccion_id" style="width: 40%%" attrs="{'invisible':[('materia_id','=',False)]}"/>
+                </group>
+                
+
+            <notebook attrs="{'invisible':[('seccion_id','=',False)]}">
+                <page string="Seleccionar corte"> 
+                    <field name="cortes_ids" on_change="onchange_lista_cortes_semestre()"/>
+                </page>
+            </notebook>
+       
+-
+              </sheet>
+            </form>
+        </field>
+        
+    </record>
+    
+    	
+    <record model="ir.ui.view" id="view_unefa_carga_notas_tree">
+         <field name="name">unefa_carga_notas.tree</field>
+        <field name="model">unefa.carga.notas</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Carga de Notas">
+                <field name="nucleo" invisible="1"/>
+                <field name="carrera" invisible="1"/>
+                <field name="division" invisible="1"/>
+                <field name="aula" invisible="1"/>
+                <field name="piso" invisible="1"/>
+                <field name="ciProfesor" invisible="1"/>
+                <field name="materia"/>
+                <field name="nombreProfesor" on_change="onchange_cargar_datos()"/>
+                <field name="apellidoProfesor"/>
+                <field name="nombreEstudiante" invisible="1"/>
+                <field name="apellidoEstudiante" invisible="1"/>
+                <field name="ciEstudiante" invisible="1"/>
+                <field name="seccion"/>
+                <field name="semestre"/>
+                <field name="firmaDigitalProfesor" invisible="1"/>
+                <field name="firmaDigitalCoordinador" invisible="1"/>
+<!--
+                <field name="corte" />
+-->
+            </tree>
+        </field>
+    </record>
+    
+    
+    <record model="ir.actions.act_window" id="action_unefa_carga_notas">
+        <field name="name">Carga de Notas</field>
+        <field name="res_model">unefa.carga.notas</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+<!--
+    <menuitem name="SIGECOOR" id="SIGECOOR" sequence="10"  /> 
+-->
+<!--
+    <menuitem name="GESTION DE CORTE" id="menu_unefa_gestion_corte"  parent="unefa_menu_principal_gestion" sequence="70" /> 
+-->
+    <menuitem name="Carga de Notas" id="menu_unefa_cdn" parent="menu_unefa_gestion_corte" sequence="20" />
+    <menuitem name="CDN" id="menu_unefa_cdn_1" parent="menu_unefa_cdn" action="action_unefa_carga_notas" sequence="10" />
+    </data>
+</openerp>
+

@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_unefa_estudiantes_profe,unefa.estudiantes,model_unefa_estudiantes,unefa_configuracion.group_unefa_profesores,1,1,1,1
+access_unefa_profesores_profe,Unefa.profesores,model_unefa_profesores,unefa_configuracion.group_unefa_profesores,1,1,1,1
+access_unefa_coordinador_profe,unefa_coordinador,model_unefa_coordinador,unefa_configuracion.group_unefa_profesores,1,1,1,1
+access_unefa_secretariado_profe,Unefa.secretariado,model_unefa_secretariado,unefa_configuracion.group_unefa_profesores,1,1,1,1
+access_unefa_evaluador_profe,Unefa.evaluador,model_unefa_evaluador,unefa_configuracion.group_unefa_profesores,1,1,1,1

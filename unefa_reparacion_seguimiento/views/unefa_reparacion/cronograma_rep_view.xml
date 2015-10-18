@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_unefa_cronograma_form">
+            <field name="name">unefa.cronograma_rep.form</field>
+            <field name="model">unefa.cronograma_rep</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Cronograma">
+                   <sheet>
+                        <group col="4" colums="4">
+                            <field name="periodo_id" style="width: 40%%"/>
+                        </group>
+                        
+                        <notebook attrs="{'invisible':[('periodo_id','=',False)]}">
+                            <page string="Asignar Prueba de Reparacion">
+                                <field name="crono_prueba_ids">
+                                
+                                <form string="Asignar Prueba de Reparacion">
+                                    <field name="semestre_id" />
+                                    <field name="seccion_id" />
+                                    <field name="materia_id" />
+                                    <field name="pensum_id" />
+                                    <field name="fecha_rep" />
+                                    <field name="hora_rep" />
+                                    <field name="observaciones" />
+                                </form>
+                                <tree string="Asignar Prueba de Reparacion" editable="bottom">
+                                    <field name="semestre_id" />
+                                    <field name="seccion_id" />
+                                    <field name="materia_id" />
+                                    <field name="pensum_id" />
+                                    <field name="fecha_rep" />
+                                    <field name="hora_rep" />
+                                    <field name="observaciones" />
+                                </tree>
+                                </field>
+                                    
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    
+    <record model="ir.ui.view" id="view_unefa_cronograma_rep_tree">
+        <field name="name">unefa.cronograma_rep.tree</field>
+        <field name="model">unefa.cronograma_rep</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Cronograma de Reparacion">
+                <field name="periodo_id" />
+                <field name="crono_prueba_ids" />
+            </tree>
+        </field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="action_cronograma_rep">
+        <field name="name">cronograma_rep</field>
+        <field name="res_model">unefa.cronograma_rep</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form,tree</field>
+    </record>
+    
+    <menuitem name="Cronograma" id="unefa_menu_cronograma_reparacion" parent="unefa_menu_rep" action="action_cronograma_rep" sequence="10"/>
+    
+    </data>
+</openerp>

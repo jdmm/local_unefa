@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <openerp>
+     <data>
+    <record model="ir.ui.view" id="view_unefa_tipo_evaluacion_form">
+        <field name="name">unefa_tipo_evaluacion.form</field>
+        <field name="model">unefa.tipo.evaluacion</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Tipo Evaluacion">
+
+                <sheet>
+                <group>
+                <field name="evaluacion" />
+
+                </group>
+
+                </sheet>
+            </form>
+        </field>
+        
+    </record>
+    
+    <record model="ir.ui.view" id="view_unefa_tipo_evaluacion_tree">
+         <field name="name">unefa_tipo_evaluacion.tree</field>
+        <field name="model">unefa.tipo.evaluacion</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Tipo Evaluacion">
+
+                <field name="evaluacion" />
+
+            </tree>
+        </field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="action_unefa_tipo_evaluacion">
+        <field name="name">Tipo Evaluacion</field>
+        <field name="res_model">unefa.tipo.evaluacion</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form,tree</field>
+    </record>
+
+    </data>
+</openerp>
+

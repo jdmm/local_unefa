@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <openerp>
+     <data>
+    <record model="ir.ui.view" id="view_unefa_evaluacion_continua_form">
+        <field name="name">unefa_evaluacion_continua.form</field>
+        <field name="model">unefa.evaluacion.continua</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Evaluaciones">
+
+                <sheet>
+                <group>
+<!--
+                <field name="evaluacion_continua_id" />
+-->
+                <field name="estudiante_id" />
+                <field name="ep1" on_change="onchange_asignar_valor(ep1,ep2,ep3,ep4)"/>
+                <field name="ep2" on_change="onchange_asignar_valor(ep1,ep2,ep3,ep4)"/>
+                <field name="ep3" on_change="onchange_asignar_valor(ep1,ep2,ep3,ep4)"/>
+                <field name="ep4" on_change="onchange_asignar_valor(ep1,ep2,ep3,ep4)"/>
+                <field name="nota_final" />
+                <field name="nota_letras" domain="[('nota_letras','=',nota_letras)]"/>
+                <field name="aprobado" domain="[('aprobado','=',aprobado)]"/>
+
+                </group>
+
+                </sheet>
+            </form>
+        </field>
+        
+    </record>
+    
+    <record model="ir.ui.view" id="view_unefa_evaluacion_continua_tree">
+         <field name="name">unefa_evaluacion_continua.tree</field>
+        <field name="model">unefa.evaluacion.continua</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Evaluaciones">
+
+<!--
+                <field name="evaluacion_continua_id" />
+-->
+                <field name="estudiante_id" />
+                <field name="ep1" />
+                <field name="ep2" />
+                <field name="ep3" />
+                <field name="ep4" />
+                <field name="nota_final" />
+                <field name="nota_letras" />
+                <field name="aprobado" />
+
+            </tree>
+        </field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="action_unefa_evaluacion_continua">
+        <field name="name">Evauaciones</field>
+        <field name="res_model">unefa.evaluacion.continua</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form,tree</field>
+    </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_unefa_prueba_rep_form">
+            <field name="name">unefa.prueba_rep.form</field>
+            <field name="model">unefa.prueba_rep</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Prueba de Reparacion">
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="borrador,aprobado,finalizado" />
+                    </header>
+
+                    <sheet>
+                        <group col="4" colums="4">
+                            <field name="profesor_id" style="width: 40%%" attrs="{'invisible':[('profesor_id','=',False)]}"/>
+                            <field name="materia_id" style="width: 40%%"/>
+                            <field name="seccion_id" style="width: 40%%" attrs="{'invisible':[('materia_id','=',False)]}"/>
+                        </group>
+
+                        <notebook attrs="{'invisible':[('seccion_id','=',False)]}">
+                            <page string="Asignar Nota de la Prueba de Reparacion">
+                                <field name="notas_rep_ids">
+                                
+                                <form string="Asignar Nota de la Prueba de Reparacion">
+                                    <field name="prueba_rep_id" />
+                                    <field name="estudiante_id" />
+                                    <field name="nota_rep" on_change="onchange_asignar_valor(nota_rep)"/>
+                                    <field name="nota_letras" domain="[('nota_letras','=',nota_letras)]"/>
+                                    <field name="aprobado" domain="[('aprobado','=',aprobado)]"/>
+                                </form>
+                                <tree string="notas_rep_ids" editable="bottom">
+                                    <field name="estudiante_id" />
+                                    <field name="nombre_estudiante" on_change="onchange_cargar_datos()"/>
+                                    <field name="nota_rep" on_change="onchange_asignar_valor(nota_rep)"/>
+                                    <field name="nota_letras" />
+                                </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    
+    <record model="ir.ui.view" id="view_unefa_prueba_rep_tree">
+        <field name="name">unefa.prueba_rep.tree</field>
+        <field name="model">unefa.prueba_rep</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Prueba de Reparacion">
+                <field name="seccion_id" />
+                <field name="notas_rep_ids"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="action_prueba_rep">
+        <field name="name">prueba_rep</field>
+        <field name="res_model">unefa.prueba_rep</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form,tree</field>
+    </record>
+    
+    <menuitem name="Prueba" id="unefa_menu_prueba_reparacion" parent="unefa_menu_rep" action="action_prueba_rep" sequence="20"/>
+    
+    </data>
+</openerp>

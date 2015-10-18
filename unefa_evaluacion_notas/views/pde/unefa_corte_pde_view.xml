@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <openerp>
+     <data>
+    <record model="ir.ui.view" id="view_unefa_corte_pde_form">
+        <field name="name">unefa_corte_pde.form</field>
+        <field name="model">unefa.corte.pde</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Corte">
+
+                <sheet>
+                <group>
+                <field name="corte" />
+                <field name="evaluacion_pde_ids" />
+
+                </group>
+
+                </sheet>
+            </form>
+        </field>
+        
+    </record>
+    
+    <record model="ir.ui.view" id="view_unefa_corte_pde_tree">
+         <field name="name">unefa_corte_pde.tree</field>
+        <field name="model">unefa.corte.pde</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Corte">
+                <field name="corte" />
+                <field name="evaluacion_pde_ids" />
+            </tree>
+        </field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="action_unefa_corte_pde">
+        <field name="name">Corte</field>
+        <field name="res_model">unefa.corte.pde</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form,tree</field>
+    </record>
+
+    </data>
+</openerp>
+

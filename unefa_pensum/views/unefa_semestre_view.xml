@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <openerp>
+
+     <data>
+    <record model="ir.ui.view" id="view_unefa_semestre_form">
+        <field name="name">unefa_semestre.form</field>
+        <field name="model">unefa.semestre</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Gestion de Semestre">
+                <sheet>
+                    <group col="4" columns="4">
+                        <field name="nombre" select="1"/>
+                        <field name="codigo" select="2"/>
+                        <notebook colspan="4">
+                            <page string="Añadir Materias">
+                                <separator string="" colspan="4"/>
+                                <field name="semestre_id" colspan="4" nolabel="1" select="0"/>
+                            </page>                  
+                        </notebook>
+                    </group>
+                </sheet>                
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_unefa_semestre_tree">
+         <field name="name">unefa_semestre.tree</field>
+        <field name="model">unefa.semestre</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="res_semestre">
+                <field name="nombre" />
+                <field name="codigo" />
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_unefa_semestre">
+        <field name="name">Unefa Semestre</field>
+        <field name="res_model">unefa.semestre</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+
+
+<!--
+     <menuitem name="Gestionar Semestres" id="menu_unefa_semestre"  parent="unefa_menu_principal_desplegar" action="action_unefa_semestre" sequence="20" />
+-->
+    </data>
+</openerp>
+

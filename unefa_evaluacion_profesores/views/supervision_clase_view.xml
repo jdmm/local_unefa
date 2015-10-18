@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <openerp>
+     <data>
+         
+<!--
+         vista formulario evaluacion en clase
+-->
+         
+     <record model="ir.ui.view" id="view_unefa_supervision_clase_form">
+        <field name="name">unefa.supervision.clase.form</field>
+        <field name="model">unefa.supervision.clase</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="cfg_cargar_proyecto">
+                <sheet>
+                    <h2 style="color: #7c7bad">Datos Generales</h2>
+                    <group col="4" colums="4">
+                        <group>
+                            <field name="nombre"/>
+                            <field name="apellido"/>
+                            <field name="cedula"/>
+                        </group>
+                        <group>
+                            <field name="fecha_evaluacion"/>
+                        </group>
+                    </group>
+                    <group col="4" colums="4">
+                        <group>
+                            <field name="periodo_id"/>
+                            <field name="regimen_id"/>
+                            <field name="asignatura"/>
+                            <field name="seccion"/>
+                            <field name="carrera"/>
+                            <field name="sede"/>
+                            <field name="aula"/>
+                        </group>
+                        <group>
+                            <field name="coordinador"/>
+                            <field name="evaluador"/>
+                            <field name="estudiantes_inscritos"/>
+                            <field name="estudiantes_presentes"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Especificación de la Clase">
+                            <p>Contenido de la Clase:</p>
+                            <field name="contenido"/>
+                            <field name="tipo" widget="radio"/>
+                        </page>
+                        <page string="Planificación, Registro y Control">
+                            <field name="planif_registro_control_ids" on_change="onchange_cargar_datos()">
+                                <form string="Planificación, registro y control">
+                                    <field name="items_evaluacion" />
+                                    <field name="evaluacion" />
+                                </form>
+                                <tree string="Planificación, registro y control" editable="bottom" create="0">
+                                    <field name="items_evaluacion"/>
+                                    <field name="evaluacion" />
+                                </tree>
+                            </field>
+                            <group class="oe_subtotal_footer oe_right" colspan="2" >
+                                <div class="oe_subtotal_footer_separator oe_inline" >
+                                    <label for="subtotal_planif" />
+                                </div>
+                                <field name="subtotal_planif"  nolabel="1" class="oe_subtotal_footer_separator" />
+                            </group>
+                        </page>
+                        <page string="Asistencia y Puntualidad">
+                            <field name="asistencia_puntualidad_ids">
+                                <form string="Planificación, registro y control">
+                                    <field name="items_evaluacion" />
+                                    <field name="evaluacion"/>
+                                </form>
+                                <tree string="Asistencia y Puntualidad" editable="bottom" create="0">
+                                    <field name="items_evaluacion"/>
+                                    <field name="evaluacion"/>
+                                </tree>
+                            </field>
+                            <group class="oe_subtotal_footer oe_right" colspan="2" >
+                                <div class="oe_subtotal_footer_separator oe_inline" >
+                                    <label for="subtotal_asis" />
+                                </div>
+                                <field name="subtotal_asis"  nolabel="1" class="oe_subtotal_footer_separator" />
+                            </group>
+                        </page>
+                        <page string="Proceso de Enseñanza-Aprendizaje">
+                            <p>Inicio de la Clase</p>
+                            <field name="inicio_clase_ids">
+                                <form string="Inicio de la clase">
+                                    <field name="items_evaluacion" />
+                                    <field name="evaluacion" />
+                                </form>
+                                <tree string="Inicio de la clase" editable="bottom" create="0">
+                                    <field name="items_evaluacion"/>
+                                    <field name="evaluacion" />
+                                </tree>
+                            </field>
+                            <group class="oe_subtotal_footer oe_right" colspan="2" >
+                                <div class="oe_subtotal_footer_separator oe_inline" >
+                                    <label for="subtotal_inicio" />
+                                </div>
+                                <field name="subtotal_inicio"  nolabel="1" class="oe_subtotal_footer_separator" />
+                            </group>
+                            <p>Desarrollo de la Clase</p>
+                            <field name="desarrollo_clase_ids">
+                                <form string="Desarrollo de la clase">
+                                    <field name="items_evaluacion" />
+                                    <field name="evaluacion" />
+                                </form>
+                                <tree string="Desarrollo de la clase" editable="bottom" create="0">
+                                    <field name="items_evaluacion"/>
+                                    <field name="evaluacion" />
+                                </tree>
+                            </field>
+                            <group class="oe_subtotal_footer oe_right" colspan="2" >
+                                <div class="oe_subtotal_footer_separator oe_inline" >
+                                    <label for="subtotal_desarrollo" />
+                                </div>
+                                <field name="subtotal_desarrollo"  nolabel="1" class="oe_subtotal_footer_separator" />
+                            </group>
+                            <p>Recursos Didacticos</p>
+                            <field name="recursos_didacticos_ids">
+                                <form string="Recursos Didacticos">
+                                    <field name="items_evaluacion" />
+                                    <field name="evaluacion" />
+                                </form>
+                                <tree string="Recursos Didacticos" editable="bottom" create="0">
+                                    <field name="items_evaluacion"/>
+                                    <field name="evaluacion" />
+                                </tree>
+                            </field>
+                            <group class="oe_subtotal_footer oe_right" colspan="2" >
+                                <div class="oe_subtotal_footer_separator oe_inline" >
+                                    <label for="subtotal_recursos" />
+                                </div>
+                                <field name="subtotal_recursos"  nolabel="1" class="oe_subtotal_footer_separator" />
+                            </group>
+                            <p>Cierre de la Clase</p>
+                            <field name="cierre_clase_ids">
+                                <form string="Cierre de la clase">
+                                    <field name="items_evaluacion" />
+                                    <field name="evaluacion" />
+                                </form>
+                                <tree string="Cierre de la clase" editable="bottom" create="0">
+                                    <field name="items_evaluacion"/>
+                                    <field name="evaluacion" />
+                                </tree>
+                            </field>
+                            <group class="oe_subtotal_footer oe_right" colspan="2" >
+                                <div class=" oe_inline" >
+                                    <label for="subtotal_cierre" />
+                                </div>
+                                <field name="subtotal_cierre"  nolabel="1" class="oe_subtotal_footer_separator" />
+                            </group>
+                        </page>
+                    </notebook> 
+                    
+                     <group col="4" colspan="4">
+                        <label for="total_evalu"/>
+                            <div>
+                                <field name="total_evalu"  class="oe_inline" />
+                                <button name="button_dummy" string="⇒ Calcular" type="object" class="oe_link"/>
+                            </div>
+                    </group>
+                    <notebook>
+                        <page string="Observaciones del Evaluador">
+                            <p>Aspectos Sobresalientes del Docente</p>
+                            <field name="cualidades_sobresalientes"/>
+                            <p>Aspectos Mejorables del Docente</p>
+                            <field name="cualidades_mejorables"/>
+                        </page>
+                        <page string="Observaciones del profesor">
+                            <field name="observaciones_profesor"/>
+                        </page>
+                    </notebook> 
+                </sheet>
+            </form>
+        </field>
+    </record>
+     
+<!--
+     vista lista evaluacion en clase
+-->
+     
+     <record model="ir.ui.view" id="view_unefa_supervision_clase_tree">
+        <field name="name">unefa.supervision.clase.form</field>
+        <field name="model">unefa.supervision.clase</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Supervisión en clase">
+                <field name="nombre"/>
+                <field name="apellido"/>
+                <field name="periodo_id"/>
+                <field name="evaluador"/>
+            </tree>
+        </field>
+     </record>
+    
+<!--
+    actions de evaluacion en clase
+-->
+    
+    <record model="ir.actions.act_window" id="action_unefa_supervision_clase">
+        <field name="name">Instrumentos de evaluación</field>
+        <field name="res_model">unefa.supervision.clase</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    
+    
+<!--
+    vista para configurar los items de evaluacion de planificacion registro y control
+-->
+    
+    
+     <record model="ir.ui.view" id="view_unefa_items_planif_registro_control_form">
+        <field name="name">unefa.items.planif.registro_control.form</field>
+        <field name="model">unefa.items.planif.registro_control</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Planificación, registro y control">
+                <sheet>
+                    <group>
+                        <field name="item_evaluacion"/>
+                        <field name="item_activo"/>
+                    </group>
+                 </sheet>
+            </form>
+        </field>
+     </record>
+
+      <record model="ir.ui.view" id="view_unefa_items_planif_registro_control_tree">
+        <field name="name">unefa.items.planif.registro_control.tree</field>
+        <field name="model">unefa.items.planif.registro_control</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree  >
+                <field name="item_evaluacion"/>
+                <field name="item_activo"/>
+            </tree>
+        </field>
+     </record>
+     
+      <record model="ir.actions.act_window" id="action_unefa_items_planif_registro_control">
+        <field name="name">Items de Evaluación</field>
+        <field name="res_model">unefa.items.planif.registro_control</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+<!--
+    vista para configurar las acciones de evaluacion en planificacion, registro y control
+-->
+    
+    
+     <record model="ir.ui.view" id="view_unefa_eval_planif_registro_control_form">
+        <field name="name">unefa.eval.planif.registro_control.form</field>
+        <field name="model">unefa.eval.planif.registro_control</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Planificación, registro y control">
+                <sheet>
+                    <group>
+                        <field name="evaluacion"/>
+                        <field name="valor_opcion"/>
+                    </group>
+                 </sheet>
+            </form>
+        </field>
+     </record>
+
+      <record model="ir.ui.view" id="view_unefa_eval_planif_registro_control_tree">
+        <field name="name">unefa.eval.planif.registro_control.tree</field>
+        <field name="model">unefa.eval.planif.registro_control</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="evaluacion"/>
+                <field name="valor_opcion"/>
+            </tree>
+        </field>
+     </record>
+     
+      <record model="ir.actions.act_window" id="action_eval_items_planif_registro_control">
+        <field name="name">Opciones de Evaluación</field>
+        <field name="res_model">unefa.eval.planif.registro_control</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+<!--
+    vista para configurar los items de asistencia y puntualidad
+-->
+
+     <record model="ir.ui.view" id="view_unefa_asistencia_puntualidad_form">
+        <field name="name">unefa.items.asistencia.evaluacion.form</field>
+        <field name="model">unefa.items.asistencia.evaluacion</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Asistencia y Puntualidad">
+                <sheet>
+                    <group>
+                        <field name="item_evaluacion"/>
+                        <field name="item_activo"/>
+                    </group>
+                 </sheet>
+            </form>
+        </field>
+     </record>
+
+      <record model="ir.ui.view" id="view_unefa_items_asistencia_puntualidad_tree">
+        <field name="name">unefa.items.asistencia.evaluacion.tree</field>
+        <field name="model">unefa.items.asistencia.evaluacion</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree  >
+                <field name="item_evaluacion"/>
+                <field name="item_activo"/>
+            </tree>
+        </field>
+     </record>
+     
+      <record model="ir.actions.act_window" id="action_unefa_asistencia_puntualidad">
+        <field name="name">Items de Evaluación</field>
+        <field name="res_model">unefa.items.asistencia.evaluacion</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+<!--
+    vista para configurar las acciones de evaluacion en asistencia y puntualidad
+-->
+    
+    
+     <record model="ir.ui.view" id="view_unefa_eval_asistencia_puntualidad_form">
+        <field name="name">unefa.eval.asistencia.puntualidad.form</field>
+        <field name="model">unefa.eval.asistencia.puntualidad</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Planificación, registro y control">
+                <sheet>
+                    <group>
+                        <field name="evaluacion"/>
+                        <field name="valor_opcion"/>
+                    </group>
+                 </sheet>
+            </form>
+        </field>
+     </record>
+
+      <record model="ir.ui.view" id="view_unefa_eval_asistencia_puntualidad_tree">
+        <field name="name">unefa.eval.asistencia.puntualidad.tree</field>
+        <field name="model">unefa.eval.asistencia.puntualidad</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="evaluacion"/>
+                <field name="valor_opcion"/>
+            </tree>
+        </field>
+     </record>
+     
+      <record model="ir.actions.act_window" id="action_eval_asistencia_puntualidad">
+        <field name="name">Opciones de Evaluación</field>
+        <field name="res_model">unefa.eval.asistencia.puntualidad</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    
+<!--
+    vista para configurar los items del inicio de la clase
+-->
+
+     <record model="ir.ui.view" id="view_unefa_inicio_clase_form">
+        <field name="name">unefa.items.inicio_clase.form</field>
+        <field name="model">unefa.items.inicio.clase</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Inicio de la Clase">
+                <sheet>
+                    <group>
+                        <field name="item_evaluacion"/>
+                        <field name="item_activo"/>
+                    </group>
+                 </sheet>
+            </form>
+        </field>
+     </record>
+
+    <record model="ir.ui.view" id="view_unefa_items_inicio_clase_tree">
+        <field name="name">unefa.items.inicio_clase.tree</field>
+        <field name="model">unefa.items.inicio.clase</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree  >
+                <field name="item_evaluacion"/>
+                <field name="item_activo"/>
+            </tree>
+        </field>
+    </record>
+     
+    <record model="ir.actions.act_window" id="action_unefa_items_inicio_clase">
+        <field name="name">Items de Evaluación</field>
+        <field name="res_model">unefa.items.inicio.clase</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    
+<!--
+    vista para configurar las acciones de evaluacion en inicio de la clase
+-->
+    
+    
+     <record model="ir.ui.view" id="view_unefa_eval_inicio_clase_form">
+        <field name="name">unefa.eval.inicio.clase.form</field>
+        <field name="model">unefa.eval.inicio.clase</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Inicio de la Clase">
+                <sheet>
+                    <group>
+                        <field name="evaluacion"/>
+                        <field name="valor_opcion"/>
+                    </group>
+                 </sheet>
+            </form>
+        </field>
+     </record>
+
+      <record model="ir.ui.view" id="view_unefa_eval_inicio_clase_tree">
+        <field name="name">unefa.eval.inicio.clase.tree</field>
+        <field name="model">unefa.eval.inicio.clase</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="evaluacion"/>
+                <field name="valor_opcion"/>
+            </tree>
+        </field>
+     </record>
+     
+      <record model="ir.actions.act_window" id="action_eval_inicio_clase">
+        <field name="name">Opciones de Evaluación</field>
+        <field name="res_model">unefa.eval.inicio.clase</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    
+    
+    
+<!--
+    vista para configurar los items del desarrollo de la clase
+-->
+
+    <record model="ir.ui.view" id="view_unefa_desarrollo_clase_form">
+        <field name="name">unefa.items.desarrollo_clase.form</field>
+        <field name="model">unefa.items.desarrollo.clase</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Desarrollo de la Clase">
+                <sheet>
+                    <group>
+                        <field name="item_evaluacion"/>
+                        <field name="item_activo"/>
+                    </group>
+                 </sheet>
+            </form>
+        </field>
+    </record>
+     
+     
+    <record model="ir.ui.view" id="view_unefa_items_desarrollo_clase_tree">
+        <field name="name">unefa.items.desarrollo_clase.tree</field>
+        <field name="model">unefa.items.desarrollo.clase</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree  >
+                <field name="item_evaluacion"/>
+                <field name="item_activo"/>
+            </tree>
+        </field>
+    </record>
+     
+      <record model="ir.actions.act_window" id="action_unefa_items_desarrollo_clase">
+        <field name="name">Items de Evaluación</field>
+        <field name="res_model">unefa.items.desarrollo.clase</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+<!--
+    vista para configurar las acciones de evaluacion en desarrollo de la clase
+-->
+    
+    
+     <record model="ir.ui.view" id="view_unefa_eval_desarrollo_clase_form">
+        <field name="name">unefa.eval.desarrollo.clase.form</field>
+        <field name="model">unefa.eval.desarrollo.clase</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Desarrollo de la Clase">
+                <sheet>
+                    <group>
+                        <field name="evaluacion"/>
+                        <field name="valor_opcion"/>
+                    </group>
+                 </sheet>
+            </form>
+        </field>
+     </record>
+
+      <record model="ir.ui.view" id="view_unefa_eval_desarrollo_clase_tree">
+        <field name="name">unefa.eval.desarrollo.clase.tree</field>
+        <field name="model">unefa.eval.desarrollo.clase</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="evaluacion"/>
+                <field name="valor_opcion"/>
+            </tree>
+        </field>
+     </record>
+     
+      <record model="ir.actions.act_window" id="action_eval_desarrollo_clase">
+        <field name="name">Opciones de Evaluación</field>
+        <field name="res_model">unefa.eval.desarrollo.clase</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+
+<!--
+    vista para configurar los items de los recursos didacticos
+-->
+    
+    <record model="ir.ui.view" id="view_unefa_recursos_didacticos_form">
+        <field name="name">unefa.items.recursos.didacticos.form</field>
+        <field name="model">unefa.items.recursos.didacticos</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Recursos Didacticos">
+                <sheet>
+                    <group>
+                        <field name="item_evaluacion"/>
+                        <field name="item_activo"/>
+                    </group>
+                 </sheet>
+            </form>
+        </field>
+    </record>
+     
+     
+    <record model="ir.ui.view" id="view_unefa_items_recursos_didacticos_tree">
+        <field name="name">unefa.items.recursos.didacticos.tree</field>
+        <field name="model">unefa.items.recursos.didacticos</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree  >
+                <field name="item_evaluacion"/>
+                <field name="item_activo"/>
+            </tree>
+        </field>
+    </record>
+     
+    <record model="ir.actions.act_window" id="action_unefa_items_recursos_didacticos">
+        <field name="name">Items de Evaluación</field>
+        <field name="res_model">unefa.items.recursos.didacticos</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+<!--
+    vista para configurar las acciones de evaluacion de los recursos didacticos
+-->
+    
+    
+     <record model="ir.ui.view" id="view_unefa_eval_recursos_didacticos_form">
+        <field name="name">unefa.eval.recursos.didacticos.form</field>
+        <field name="model">unefa.eval.recursos.didacticos</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Recursos Didacticos">
+                <sheet>
+                    <group>
+                        <field name="evaluacion"/>
+                        <field name="valor_opcion"/>
+                    </group>
+                 </sheet>
+            </form>
+        </field>
+     </record>
+
+      <record model="ir.ui.view" id="view_unefa_eval_recursos_didacticos_tree">
+        <field name="name">unefa.eval.recursos.didacticos.tree</field>
+        <field name="model">unefa.eval.recursos.didacticos</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="evaluacion"/>
+                <field name="valor_opcion"/>
+            </tree>
+        </field>
+     </record>
+     
+      <record model="ir.actions.act_window" id="action_eval_recursos_didacticos">
+        <field name="name">Opciones de Evaluación</field>
+        <field name="res_model">unefa.eval.recursos.didacticos</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+<!--
+    vista para configurar los items del cierre de la clase
+-->
+    
+    <record model="ir.ui.view" id="view_unefa_cierre_clase_form">
+        <field name="name">unefa.items.cierre_clase.form</field>
+        <field name="model">unefa.items.cierre.clase</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Cierre de la Clase">
+                <sheet>
+                    <group>
+                        <field name="item_evaluacion"/>
+                        <field name="item_activo"/>
+                    </group>
+                 </sheet>
+            </form>
+        </field>
+    </record>
+     
+     
+    <record model="ir.ui.view" id="view_unefa_items_cierre_clase_tree">
+        <field name="name">unefa.items.cierre_clase.tree</field>
+        <field name="model">unefa.items.cierre.clase</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree  >
+                <field name="item_evaluacion"/>
+                <field name="item_activo"/>
+            </tree>
+        </field>
+    </record>
+     
+    <record model="ir.actions.act_window" id="action_unefa_items_cierre_clase">
+        <field name="name">Items de Evaluación</field>
+        <field name="res_model">unefa.items.cierre.clase</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+<!--
+    vista para configurar las acciones de evaluacion en cierre de la clase
+-->
+    
+    
+     <record model="ir.ui.view" id="view_unefa_eval_cierre_clase_form">
+        <field name="name">unefa.eval.cierre.clase.form</field>
+        <field name="model">unefa.eval.cierre.clase</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Cierre de la Clase">
+                <sheet>
+                    <group>
+                        <field name="evaluacion"/>
+                        <field name="valor_opcion"/>
+                    </group>
+                 </sheet>
+            </form>
+        </field>
+     </record>
+
+      <record model="ir.ui.view" id="view_unefa_eval_cierre_clase_tree">
+        <field name="name">unefa.eval.cierre.clase.tree</field>
+        <field name="model">unefa.eval.cierre.clase</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="evaluacion"/>
+                <field name="valor_opcion"/>
+            </tree>
+        </field>
+     </record>
+     
+      <record model="ir.actions.act_window" id="action_eval_cierre_clase">
+        <field name="name">Opciones de Evaluación</field>
+        <field name="res_model">unefa.eval.cierre.clase</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    
+<!--
+    menus de supervision de clase
+-->
+    
+<!--
+    <menuitem name="Instrumentos de Evaluación" id="menu_instrumentos_evaluacion"  sequence="10" />
+-->
+    <menuitem name="Instrumentos de Evaluación" id="inicio_unefa_supervision_clase" parent="unefa_configuracion.unefa_menu_principal_gestion" sequence="100" />
+    <menuitem name="Supervisión en Clase" id="menu_supervision_clase" parent="inicio_unefa_supervision_clase" action="action_unefa_supervision_clase" sequence="10"/>
+   
+   
+    <menuitem name="Configuración de Items" id="inicio_unefa_configuracion" parent="unefa_configuracion.unefa_menu_configuracion" sequence="70" />
+    <menuitem name="Evaluación Supervisión en Clase" id="eval_supervision_clase" parent="inicio_unefa_configuracion" sequence="10"/>
+    
+    
+    <menuitem name="Items Planificación, registro y control" id="menu_items_planif_registro_control_clase" parent="eval_supervision_clase" action="action_unefa_items_planif_registro_control" sequence="10"/>
+    <menuitem name="Items Asistencia y Puntualidad" id="menu_items_asistencia_puntualidad_2" parent="eval_supervision_clase" action="action_unefa_asistencia_puntualidad" sequence="20"/>
+    <menuitem name="Items Inicio de la Clase" id="menu_items_inicio_clase" parent="eval_supervision_clase" action="action_unefa_items_inicio_clase" sequence="30"/>
+    <menuitem name="Items Desarrollo de la Clase" id="menu_items_desarrollo_clase" parent="eval_supervision_clase" action="action_unefa_items_desarrollo_clase" sequence="40"/>
+    <menuitem name="Items Recursos Didacticos" id="menu_items_recursos_didacticos" parent="eval_supervision_clase" action="action_unefa_items_recursos_didacticos" sequence="50"/>
+    <menuitem name="Items Cierre de la Clase" id="menu_items_cierre_clase" parent="eval_supervision_clase" action="action_unefa_items_cierre_clase" sequence="60"/>
+    
+    
+    
+    
+    <menuitem name="Configuración de Evaluación" id="inicio_unefa_configuracion_eval" parent="unefa_configuracion.unefa_menu_configuracion" sequence="80" />
+    <menuitem name="Evaluación Supervisión en Clase" id="eval_config_supervision_clase" parent="inicio_unefa_configuracion_eval" sequence="10"/>
+    
+    <menuitem name="Evaluación Planificación, registro y control" id="menu_eval_planif_registro_control_clase" parent="eval_config_supervision_clase" action="action_eval_items_planif_registro_control" sequence="10"/>
+    <menuitem name="Evaluación Asistencia y Puntualidad" id="menu_eval_asistencia_puntualidad" parent="eval_config_supervision_clase" action="action_eval_asistencia_puntualidad" sequence="20"/>
+    <menuitem name="Evaluación Inicio de la Clase" id="menu_eval_inicio_clase" parent="eval_config_supervision_clase" action="action_eval_inicio_clase" sequence="30"/>
+    <menuitem name="Evaluación Desarrollo de la Clase" id="menu_eval_desarrollo_clase" parent="eval_config_supervision_clase" action="action_eval_desarrollo_clase" sequence="40"/>
+    <menuitem name="Evaluación Recursos Didacticos" id="menu_eval_recursos_didacticos" parent="eval_config_supervision_clase" action="action_eval_recursos_didacticos" sequence="50"/>
+    <menuitem name="Evaluación Cierre de la Clase" id="menu_eval_cierre_clase" parent="eval_config_supervision_clase" action="action_eval_cierre_clase" sequence="60"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="1">
+        
+    <record id="unefa_edu" model="unefa.materia">
+		<field name="materia">EDUCACIÓN AMBIENTAL</field>
+		<field name="codigo">ADG-25132</field>
+		<field name="teoria">2</field>
+		<field name="practica">1</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">2</field>
+	</record>
+    <record id="unefa_hom" model="unefa.materia">
+		<field name="materia">HOMBRE, SOCIEDAD, CIENCIA Y TEC.</field>
+		<field name="codigo">ADG-25123</field>
+		<field name="teoria">2</field>
+		<field name="practica">2</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">3</field>
+	</record>
+    <record id="unefa_in" model="unefa.materia">
+		<field name="materia">INGLES I</field>
+		<field name="codigo">IDM-24113</field>
+		<field name="teoria">2</field>
+		<field name="practica">2</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">3</field>
+	</record>
+    <record id="unefa_dib" model="unefa.materia">
+		<field name="materia">DIBUJO</field>
+		<field name="codigo">MAT-21212</field>
+		<field name="teoria">1</field>
+		<field name="practica">3</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">2</field>
+	</record>
+    <record id="unefa_mat" model="unefa.materia">
+		<field name="materia">MATEMÁTICA I</field>
+		<field name="codigo">MAT-21215</field>
+		<field name="teoria">4</field>
+		<field name="practica">2</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">5</field>
+	</record>
+    <record id="unefa_geo" model="unefa.materia">
+		<field name="materia">GEOMETRÍA ANALÍTICA</field>
+		<field name="codigo">MAT-21524</field>
+		<field name="teoria">3</field>
+		<field name="practica">2</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">4</field>
+	</record>
+    <record id="unefa_de" model="unefa.materia">
+		<field name="materia">DEFENSA INTEGRAL DE LA NACION I</field>
+		<field name="codigo">DIN-21113</field>
+		<field name="teoria">2</field>
+		<field name="practica">2</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">3</field>
+	</record>
+    <record id="unefa_se" model="unefa.materia">
+		<field name="materia">SEMINARIO I</field>
+		<field name="codigo">ADG-25131</field>
+		<field name="teoria">1</field>
+		<field name="practica">0</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">1</field>
+	</record>
+    <record id="unefa_ing" model="unefa.materia">
+		<field name="materia">INGLÉS II</field>
+		<field name="codigo">IDM-24123</field>
+		<field name="teoria">2</field>
+		<field name="practica">2</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">3</field>
+	</record>
+    <record id="unefa_qui" model="unefa.materia">
+		<field name="materia">QUÍMICA GENERAL</field>
+		<field name="codigo">QUF-22014</field>
+		<field name="teoria">2</field>
+		<field name="practica">2</field>
+		<field name="laboratorio">3</field>
+		<field name="uc">4</field>
+	</record>
+    <record id="unefa_fi" model="unefa.materia">
+		<field name="materia">FÍSICA I</field>
+		<field name="codigo">QUF-23015</field>
+		<field name="teoria">4</field>
+		<field name="practica">2</field>
+		<field name="laboratorio">2</field>
+		<field name="uc">5</field>
+	</record>
+    <record id="unefa_mate" model="unefa.materia">
+		<field name="materia">MATEMÁTICA II</field>
+		<field name="codigo">MAT-21225</field>
+		<field name="teoria">4</field>
+		<field name="practica">2</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">5</field>
+	</record>
+    <record id="unefa_alge" model="unefa.materia">
+		<field name="materia">ÁLGEBRA LINEAL</field>
+		<field name="codigo">MAT-21114</field>
+		<field name="teoria">2</field>
+		<field name="practica">4</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">4</field>
+	</record>
+    <record id="unefa_def" model="unefa.materia">
+		<field name="materia">DEFENSA INTEGRAL DE LA NACION II</field>
+		<field name="codigo">DIN-21123</field>
+		<field name="teoria">2</field>
+		<field name="practica">2</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">3</field>
+	</record>
+    <record id="unefa_sem" model="unefa.materia">
+		<field name="materia">SEMINARIO II</field>
+		<field name="codigo">ADG-25141</field>
+		<field name="teoria">1</field>
+		<field name="practica">0</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">1</field>
+	</record>
+    <record id="unefa_fis" model="unefa.materia">
+		<field name="materia">FÍSICA II</field>
+		<field name="codigo">QUF-23025</field>
+		<field name="teoria">4</field>
+		<field name="practica">2</field>
+		<field name="laboratorio">2</field>
+		<field name="uc">5</field>
+	</record>
+    <record id="unefa_matema" model="unefa.materia">
+		<field name="materia">MATEMÁTICA III</field>
+		<field name="codigo">MAT-21235</field>
+		<field name="teoria">4</field>
+		<field name="practica">2</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">5</field>
+	</record>
+    <record id="unefa_pro" model="unefa.materia">
+		<field name="materia">PROBABILIDADES Y ESTADÍSTICA</field>
+		<field name="codigo">MAT-21414</field>
+		<field name="teoria">2</field>
+		<field name="practica">4</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">4</field>
+	</record>
+    <record id="unefa_progr" model="unefa.materia">
+		<field name="materia">PROGRAMACIÓN</field>
+		<field name="codigo">SYC-22113</field>
+		<field name="teoria">2</field>
+		<field name="practica">0</field>
+		<field name="laboratorio">3</field>
+		<field name="uc">3</field>
+	</record>
+    <record id="unefa_defe" model="unefa.materia">
+		<field name="materia">DEFENSA INTEGRAL DE LA NACION III</field>
+		<field name="codigo">DIN-21133</field>
+		<field name="teoria">2</field>
+		<field name="practica">2</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">3</field>
+	</record>
+    <record id="unefa_sis" model="unefa.materia">
+		<field name="materia">SISTEMAS ADMINISTRATIVOS </field>
+		<field name="codigo">AGG-22313</field>
+		<field name="teoria">3</field>
+		<field name="practica">3</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">4</field>
+	</record>
+    <record id="unefa_teo" model="unefa.materia">
+		<field name="materia">TEORÍA DE LOS SISTEMAS </field>
+		<field name="codigo">SYC-32114</field>
+		<field name="teoria">3</field>
+		<field name="practica">3</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">4</field>
+	</record>
+    <record id="unefa_log" model="unefa.materia">
+		<field name="materia">LÓGICA MATEMÁTICA</field>
+		<field name="codigo">MAT-31214</field>
+		<field name="teoria">3</field>
+		<field name="practica">3</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">4</field>
+	</record>
+    <record id="unefa_len" model="unefa.materia">
+		<field name="materia">LENGUAJES DE PROGRAMACIÓN I</field>
+		<field name="codigo">SYC-32225</field>
+		<field name="teoria">4</field>
+		<field name="practica">0</field>
+		<field name="laboratorio">3</field>
+		<field name="uc">5</field>
+	</record>
+    <record id="unefa_defen" model="unefa.materia">
+		<field name="materia">DEFENSA INTEGRAL DE LA NACION IV</field>
+		<field name="codigo">DIN-31143</field>
+		<field name="teoria">2</field>
+		<field name="practica">2</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">3</field>
+	</record>
+    
+    <record id="unefa_sist" model="unefa.materia">
+		<field name="materia">SISTEMAS DE PRODUCCIÓN </field>
+		<field name="codigo">AGL-30214</field>
+		<field name="teoria">3</field>
+		<field name="practica">3</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">4</field>
+	</record>
+    
+    <record id="unefa_proce" model="unefa.materia">
+		<field name="materia">PROCESAMIENTO DE DATOS </field>
+		<field name="codigo">SYC-32414</field>
+		<field name="teoria">3</field>
+		<field name="practica">0</field>
+		<field name="laboratorio">3</field>
+		<field name="uc">4</field>
+	</record>
+    
+    <record id="unefa_calc" model="unefa.materia">
+		<field name="materia">CÁLCULO NUMÉRICO</field>
+		<field name="codigo">MAT-31714</field>
+		<field name="teoria">3</field>
+		<field name="practica">3</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">4</field>
+	</record>
+    
+    <record id="unefa_teor" model="unefa.materia">
+		<field name="materia">TEORÍA DE GRAFOS</field>
+		<field name="codigo">MAT-31114</field>
+		<field name="teoria">3</field>
+		<field name="practica">3</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">4</field>
+	</record>
+    
+    <record id="unefa_leng" model="unefa.materia">
+		<field name="materia">LENGUAJES DE PROGRAMACIÓN II</field>
+		<field name="codigo">SYC-32235</field>
+		<field name="teoria">2</field>
+		<field name="practica">2</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">3</field>
+	</record>
+    
+    <record id="unefa_defens" model="unefa.materia">
+		<field name="materia">DEFENSA INTEGRAL DE LA NACION V</field>
+		<field name="codigo">DIN-31153</field>
+		<field name="teoria">2</field>
+		<field name="practica">2</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">3</field>
+	</record>
+    <record id="unefa_inve" model="unefa.materia">
+		<field name="materia">INVESTIGACIÓN DE OPERACIONES </field>
+		<field name="codigo">MAT-30925</field>
+		<field name="teoria">4</field>
+		<field name="practica">3</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">5</field>
+	</record>
+    <record id="unefa_circ" model="unefa.materia">
+		<field name="materia">CIRCUITOS LÓGICOS</field>
+		<field name="codigo">ELN-30514</field>
+		<field name="teoria">3</field>
+		<field name="practica">2</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">4</field>
+	</record>
+    <record id="unefa_anal" model="unefa.materia">
+		<field name="materia">ANÁLISIS DE SISTEMAS</field>
+		<field name="codigo">SYC-32514</field>
+		<field name="teoria">3</field>
+		<field name="practica">3</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">4</field>
+	</record>
+    <record id="unefa_bd" model="unefa.materia">
+		<field name="materia">BASES DE DATOS</field>
+		<field name="codigo">SYC-32614</field>
+		<field name="teoria">3</field>
+		<field name="practica">0</field>
+		<field name="laboratorio">3</field>
+		<field name="uc">4</field>
+	</record>
+    <record id="unefa_lengu" model="unefa.materia">
+		<field name="materia">LENGUAJES DE PROGRAMACIÓN III</field>
+		<field name="codigo">SYC-32245</field>
+		<field name="teoria">4</field>
+		<field name="practica">0</field>
+		<field name="laboratorio">3</field>
+		<field name="uc">5</field>
+	</record>
+    <record id="unefa_defensa" model="unefa.materia">
+		<field name="materia">DEFENSA INTEGRAL DE LA NACION VI</field>
+		<field name="codigo">DIN-31163</field>
+		<field name="teoria">2</field>
+		<field name="practica">2</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">3</field>
+	</record>
+    <record id="unefa_opti" model="unefa.materia">
+		<field name="materia">OPTIMIZACIÓN NO LINEAL</field>
+		<field name="codigo">MAT-30935</field>
+		<field name="teoria">4</field>
+		<field name="practica">3</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">5</field>
+	</record>
+    <record id="unefa_proces" model="unefa.materia">
+		<field name="materia">PROCESOS ESTOCÁSTICOS</field>
+		<field name="codigo">MAT-31414</field>
+		<field name="teoria">3</field>
+		<field name="practica">3</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">4</field>
+	</record>
+    <record id="unefa_arqui" model="unefa.materia">
+		<field name="materia">ARQUITECTURA DEL COMPUTADOR</field>
+		<field name="codigo">SYC-30525</field>
+		<field name="teoria">4</field>
+		<field name="practica">3</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">5</field>
+	</record>
+    <record id="unefa_disen" model="unefa.materia">
+		<field name="materia">DISEÑO DE SISTEMAS</field>
+		<field name="codigo">SYC-32524</field>
+		<field name="teoria">3</field>
+		<field name="practica">3</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">4</field>
+	</record>
+    <record id="unefa_sistema" model="unefa.materia">
+		<field name="materia">SISTEMAS OPERATIVOS</field>
+		<field name="codigo">SYC-30834</field>
+		<field name="teoria">3</field>
+		<field name="practica">0</field>
+		<field name="laboratorio">3</field>
+		<field name="uc">4</field>
+	</record>
+    
+    <record id="unefa_defensai" model="unefa.materia">
+		<field name="materia">DEFENSA INTEGRAL DE LA NACION VII</field>
+		<field name="codigo">DIN-31173</field>
+		<field name="teoria">2</field>
+		<field name="practica">2</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">3</field>
+	</record>
+    <record id="unefa_implan" model="unefa.materia">
+		<field name="materia">IMPLANTACIÓN DE SISTEMAS</field>
+		<field name="codigo">SYC-32714</field>
+		<field name="teoria">3</field>
+		<field name="practica">3</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">4</field>
+	</record>
+    <record id="unefa_metodo" model="unefa.materia">
+		<field name="materia">METODOLOGIA  DE LA INVESTIGACION</field>
+		<field name="codigo">ADG-30214</field>
+		<field name="teoria">4</field>
+		<field name="practica">0</field>
+		<field name="laboratorio">3</field>
+		<field name="uc">5</field>
+	</record>
+    
+    <record id="unefa_simulacion" model="unefa.materia">
+		<field name="materia">SIMULACIÓN Y MODELOS</field>
+		<field name="codigo">MAT-30945</field>
+		<field name="teoria">4</field>
+		<field name="practica">0</field>
+		<field name="laboratorio">3</field>
+		<field name="uc">5</field>
+	</record>
+    <record id="unefa_redes" model="unefa.materia">
+		<field name="materia">REDES</field>
+		<field name="codigo">SYC-31644</field>
+		<field name="teoria">3</field>
+		<field name="practica">0</field>
+		<field name="laboratorio">3</field>
+		<field name="uc">4</field>
+	</record>
+    <record id="unefa_gerencia" model="unefa.materia">
+		<field name="materia">GERENCIA DE LA INFORMÁTICA</field>
+		<field name="codigo">ADG-30224</field>
+		<field name="teoria">3</field>
+		<field name="practica">2</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">4</field>
+	</record>
+    <record id="unefa_defensain" model="unefa.materia">
+		<field name="materia">DEFENSA INTEGRAL DE LA NACION VIII</field>
+		<field name="codigo">DIN-31183</field>
+		<field name="teoria">2</field>
+		<field name="practica">2</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">3</field>
+	</record>
+    <record id="unefa_teoriad" model="unefa.materia">
+		<field name="materia">TEORÍA DE DECISIONES</field>
+		<field name="codigo">MAT-31314</field>
+		<field name="teoria">3</field>
+		<field name="practica">2</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">4</field>
+	</record>
+    <record id="unefa_auditoria" model="unefa.materia">
+		<field name="materia">AUDITORÍA DE SISTEMAS</field>
+		<field name="codigo">SYC-32814</field>
+		<field name="teoria">3</field>
+		<field name="practica">3</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">4</field>
+	</record>
+    <record id="unefa_elec" model="unefa.materia">
+		<field name="materia">ELECTIVA TÉCNICA</field>
+        <field name="codigo">S/C</field>
+		<field name="teoria">3</field>
+		<field name="practica">0</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">3</field>
+	</record>
+    <record id="unefa_ele" model="unefa.materia">
+		<field name="materia">ELECTIVA NO TÉCNICA</field>
+        <field name="codigo">S/C</field>
+		<field name="teoria">3</field>
+		<field name="practica">0</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">3</field>
+	</record>
+    <record id="unefa_marco" model="unefa.materia">
+		<field name="materia">MARCO  LEGAL PARA EL EJERCICIO DE LA INGENIERÍA</field>
+        <field name="codigo">CJU-37314</field>
+		<field name="teoria">4</field>
+		<field name="practica">0</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">4</field>
+	</record>
+    <record id="unefa_teleproceso" model="unefa.materia">
+		<field name="materia">TELEPROCESOS</field>
+        <field name="codigo">TTC-31154</field>
+		<field name="teoria">3</field>
+		<field name="practica">3</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">4</field>
+	</record>
+    <record id="unefa_electi" model="unefa.materia">
+		<field name="materia">ELECTIVA TÉCNICA</field>
+        <field name="codigo">S/C</field>
+		<field name="teoria">3</field>
+		<field name="practica">0</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">3</field>
+	</record>
+    <record id="unefa_electiva" model="unefa.materia">
+		<field name="materia">ELECTIVA NO TÉCNICA</field>
+        <field name="codigo">S/C</field>
+		<field name="teoria">3</field>
+		<field name="practica">0</field>
+		<field name="laboratorio">0</field>
+		<field name="uc">3</field>
+	</record>
+   
+    
+    </data>
+
+</openerp>

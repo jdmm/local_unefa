@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    <record model="ir.ui.view" id="view_unefa_inscripcion_form">
+        <field name="name">unefa.inscripcion.form</field>
+        <field name="model">unefa.inscripcion</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Inscripción">
+                <header>
+                    <button name="preinscribir_materia" states="borrador" string ="Preinscribir"  type="object"/>
+                    <button name="inscribir_materia" states="preinscrito" string ="Inscribir"  type="object"/>
+                    <button name="cancelar_preinscripcion" states="preinscrito" string ="Cancelar"  type="object"/>
+                    <button name="generar_planilla" string = "Generar Planilla"/>
+                    <field name="state" widget="statusbar" statusbar_visible="borrador,preinscrito,inscrito,cancelar" />
+                </header>
+                
+                <sheet>
+                    <group col="4" colums="4">
+                        <field name="estudiante" attrs="{'readonly': [('create_uid','!=',False)]}" on_change="onchange_cargar_datos()"/>
+                        <field name="fecha_inscripcion" />
+                        <field name="carrera_id" widget="selection"/>
+                        <field name="pensum_id" widget="selection"/>
+                        <field name="periodo_id" widget="selection"/>
+                        <field name="regimen" widget="selection"/>
+                        <field name="create_uid" invisible="1"/>
+                    </group>
+                    <notebook>
+                        <page>
+                            <field name="inscripcion_asiganatura_ids"/>
+                                <group class="oe_subtotal_footer oe_right" colspan="2">
+                                    <div class="oe_subtotal_footer_separator oe_inline" >
+                                        <label for="total_uc"/>
+                                        <button name="button_dummy"
+                                                string="(Actualizar)" type="object" class="oe_edit_only oe_link"/>
+                                    </div>
+                                    <field name="total_uc"  nolabel="1" class="oe_subtotal_footer_separator"/>
+                                </group>
+                        </page>
+                    </notebook>
+                    <div class="oe_clear"/>
+                    <field name="observaciones" placeholder="Observaciones..." />
+            </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record model="ir.ui.view" id="view_unefa_inscripcion_tree">
+        <field name="name">unefa.inscripcion.tree</field>
+        <field name="model">unefa.inscripcion</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Inscripción">
+                <field name="estudiante" />
+                <field name="carrera_id" />
+                <field name="regimen" />
+                <field name="pensum_id" />
+                <field name="fecha_inscripcion" />
+            </tree>
+        </field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="action_unefa_inscripcion">
+        <field name="name">Inscripción</field>
+        <field name="res_model">unefa.inscripcion</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form,tree</field>
+    </record>
+
+<!--
+    vista para crear las materia a inscribir
+-->
+    
+    <record model="ir.ui.view" id="view_unefa_inscripcion_asignatura_form">
+        <field name="name">unefa.inscripcion_asignatura.form</field>
+        <field name="model">unefa.inscripcion_asignatura</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Inscripción">
+                <sheet>
+                    <group >
+                        <field name="semestre_id" style="width: 40%%"  on_change="onchange_semestre(semestre_id,'semestre')" />
+                        <field name="asignatura_id" style="width: 40%%" on_change="onchange_asignatura(semestre_id,'semestre')"/>
+                        <field name="codigo" style="width: 40%%"/>
+                        <field name="unidades_creditos" style="width: 40%%"/>
+                        <field name="seccion_id" style="width: 40%%" />
+                        <field name="state" invisible="1"/>
+                    </group>
+            </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record model="ir.ui.view" id="view_unefa_inscripcion_asignatura_tree">
+        <field name="name">unefa.inscripcion_asignatura.tree</field>
+        <field name="model">unefa.inscripcion_asignatura</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Inscripción">
+                <field name="semestre_id"/>
+                    <field name="asignatura_id" />
+                    <field name="codigo" />
+                    <field name="unidades_creditos"/>
+                    <field name="seccion_id" />
+            </tree>
+        </field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="action_unefa_inscripcion_asignatura">
+        <field name="name">Asignaturas</field>
+        <field name="res_model">unefa.inscripcion_asignatura</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form,tree</field>
+    </record>
+    
+    
+    
+<!--
+    <menuitem name="Gestión planificación de semestre" id="ges_planificacio_semestre_id" />
+-->
+    <menuitem name="Gestión inscripción" id="gestion_inscripcion_id" parent="unefa_configuracion.unefa_menu_principal_gestion" sequence="50"/>
+    <menuitem name="Gestión inscripción" id="gestion_inscripcion_id_desplegable" parent="gestion_inscripcion_id" />
+    <menuitem name="Inscripción" id="inscripcion_id" parent="gestion_inscripcion_id_desplegable" action="action_unefa_inscripcion" sequence="10"/>
+    
+    </data>
+</openerp>

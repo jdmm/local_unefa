@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <openerp>
+
+     <data>
+    <record model="ir.ui.view" id="view_unefa_materia_form">
+        <field name="name">unefa_materia.form</field>
+        <field name="model">unefa.materia</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Gestion de Materias">
+                <sheet>
+                    <group col="4" columns="4">
+                        <field name="materia" select="1"/>
+                        <field name="codigo" select="2"/>
+                        <field name="teoria" select="2"/>
+                        <field name="practica" select="2"/>
+                        <field name="laboratorio" select="2"/>
+                        <field name="uc" select="2"/>
+                        <notebook colspan="4">
+                            <page string="Prelacion">
+                                <separator string="Materias Requeridas" colspan="4"/>
+                                <field name="prelacion" colspan="4" nolabel="1" select="0"/>
+                            </page>                  
+                        </notebook>
+                    </group>
+                </sheet>                
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_unefa_materia_tree">
+         <field name="name">unefa_materia.tree</field>
+        <field name="model">unefa.materia</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="res_materia">
+                <field name="materia" />
+                <field name="codigo" />
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_unefa_materia">
+        <field name="name">Unefa Pensum</field>
+        <field name="res_model">unefa.materia</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+   <!--
+     <menuitem name="Modulo Pensum" id="menu_unefa_pensum_gestion" sequence="10"/>
+-->
+     <menuitem name="Pensum" id="unefa_menu_principal_pensum_gestion"  parent="unefa_configuracion.unefa_menu_principal_gestion" sequence="20" />
+     <menuitem name="Pensum" id="unefa_menu_principal_desplegar"  parent="unefa_menu_principal_pensum_gestion" sequence="20" />
+<!--
+     <menuitem name="Pensum" id="unefa_menu_principal_gestion"  parent="unefa_menu_principal_desplegar" sequence="10" />
+-->
+<!--
+     <menuitem name="Gestionar Materias" id="menu_unefa_materias"  parent="unefa_menu_principal_desplegar" action="action_unefa_materia" sequence="10" />
+-->
+    </data>
+</openerp>
+
+

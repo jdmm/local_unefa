@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_unefa_aulas_form">
+            <field name="name">Unefa_aulas_form</field>
+            <field name="model">unefa.aulas</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="aulas">
+                    <sheet>
+                        <header>
+                        <h2 style="color:#7C7BAD"><center>Aulas</center></h2>
+                        </header>
+                    <group>
+                        <field name="numero" style="width:40%"/>
+                        <field name="tipo" style="width:40%"/>
+                        <field name="cant_pupitres"/>
+                        <field name="cant_pizarras"/>
+                        <field name="active" invisible="1"/>
+                    </group>
+                    </sheet>
+                </form>
+            
+            </field>
+        
+        </record>
+        
+        <record model="ir.ui.view" id="view_unefa_aulas_tree">
+            <field name="name">Unefa_aulas_tree</field>
+            <field name="model">unefa.aulas</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="aulas">
+                   
+                        <field name="numero"/>
+                        <field name="tipo"/>
+                        <field name="cant_pupitres"/>
+                        <field name="cant_pizarras"/>
+                        <field name="piso_id"/>
+                        <field name="active" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_unefa_aulas">
+            <field name="name">Unefa aulas</field>
+            <field name="res_model">unefa.aulas</field>
+            <field name="view_mode">tree</field>
+            <field name="target">inline</field>
+             <field name="help" type="html">
+            <p class="oe_view_nocontent_inline">
+            Aqui se listan las aulas
+            </p>
+            </field>
+        </record>
+        
+        <menuitem name="Aulas" id="menu_aulas"  action="action_unefa_aulas" parent="unefa_menu_pisos_aulas_configuracion" sequence="10"/>
+       
+    </data>
+</openerp>

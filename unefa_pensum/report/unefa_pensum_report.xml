@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+<!--
+        cambie de id_template_unefa_pensum_report_qweb 
+-->
+		<report id="id_template_unefa_pensum_qweb"
+			string="Pensum"
+			model="unefa.pensum"
+			report_type="qweb-pdf"
+			file="unefa_pensum.id_template_unefa_pensum_qweb"
+            name="unefa_pensum.id_template_unefa_pensum_qweb"
+            menu="True"/>
+	</data>
+</openerp>

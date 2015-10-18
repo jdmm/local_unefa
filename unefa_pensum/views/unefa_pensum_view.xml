@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <openerp>
+
+     <data>
+    <record model="ir.ui.view" id="view_unefa_pensum_form">
+        <field name="name">unefa_pensum.form</field>
+        <field name="model">unefa.pensum</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Gestion de Pensum">
+                <sheet>
+                    <group col="4" columns="4">
+                        <field name="nombre" select="1"/>
+                        <field name="codigo" select="2"/>
+                        <field name="fecha" select="0"/>
+                        <field name="attachment_ids" widget="many2many_binary"/>   
+                        <notebook colspan="4">
+                            <page string="Añadir Semestres">
+                                <separator string="" colspan="4"/>
+                                <field name="pensum_id" colspan="4" nolabel="1" select="0"/>
+                            </page>
+                                          
+                        </notebook>
+                    </group>
+                </sheet>                
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_unefa_pensum_tree">
+         <field name="name">unefa_pensum.tree</field>
+        <field name="model">unefa.pensum</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="res_pensum">
+                <field name="nombre" />
+                <field name="codigo" />
+    
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_unefa_pensum">
+        <field name="name">Unefa Pensum</field>
+        <field name="res_model">unefa.pensum</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+
+     <menuitem name="Gestionar Pensum" id="menu_unefa_pensum"  parent="unefa_menu_principal_desplegar" action="action_unefa_pensum" sequence="30" />
+    </data>
+</openerp>
+

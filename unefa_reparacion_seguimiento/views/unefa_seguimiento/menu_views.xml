@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+<!--
+        <menuitem name="Seguimiento" id="unefa_menu_principal_gestion" sequence="10"/>
+-->
+        <menuitem name="Seguimiento de Notas" id="unefa_menu_seguimiento_notas"  parent="unefa_configuracion.unefa_menu_principal_gestion" sequence="95"/>
+        <menuitem name="Seguimiento" id="unefa_menu_seguimiento_desplegable" parent="unefa_menu_seguimiento_notas"  sequence="10"/>
+    </data>
+</openerp>

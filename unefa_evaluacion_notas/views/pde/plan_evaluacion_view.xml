@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <openerp>
+     <data>
+    <record model="ir.ui.view" id="view_unefa_plan_evaluacion_form">
+        <field name="name">unefa_plan_evaluacion.form</field>
+        <field name="model">unefa.plan.evaluacion</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Plan de Evaluacion">
+               <header> 
+                   <button name="aprobar_pde" string = "Aprobar"/>
+                   <button name="generar_pde" string = "Generar Plan de Evaluacion"/>
+                   <field name="state" widget="statusbar" statusbar_visible="borrador,aprobado" />
+                </header> 
+                
+                <sheet>
+                <h2>
+                    <center>
+                        <label string="Plan de Evaluacion" />
+                    </center>
+                </h2>
+                
+                <group col="6" colums="4">
+                <field name="fecha" on_change="onchange_cargar_datos()"/>
+                <field name="nucleo" invisible="1"/>
+                <field name="carrera" invisible="1"/>
+                <field name="division" invisible="1"/>
+                <field name="sede" invisible="1"/>
+                <field name="regimen" invisible="1"/>
+                <field name="aula" invisible="1"/>
+                <field name="ciProfesor" invisible="1"/>
+                <field name="seccion" invisible="1"/>
+                <field name="semestre" invisible="1"/>
+                <field name="materia" invisible="1"/>
+                <field name="codigoMateria" invisible="1"/>
+                <field name="nombreCoordinador" invisible="1"/>
+                <field name="horasSemanales" invisible="1"/>
+                <field name="numeroEstudiantesInscritos" invisible="1"/>
+                <field name="periodoAcademico" />
+                </group>
+		
+		<group >
+		<field name="semestre_id" style="width: 40%%" />
+		<field name="materia_id" style="width: 40%%" attrs="{'invisible':[('semestre_id','=',False)]}"/>
+		<field name="seccion_id" style="width: 40%%" attrs="{'invisible':[('materia_id','=',False)]}"/>
+                </group>
+
+           
+            <notebook attrs="{'invisible':[('seccion_id','=',False)]}">
+                <page string="Cortes"> 
+                    <field name="corte_id"/>
+                </page>
+            </notebook>
+
+                
+                </sheet>
+            </form>
+        </field>
+        
+    </record>
+    
+    <record model="ir.ui.view" id="view_unefa_plan_evaluacion_tree">
+         <field name="name">unefa_plan_evaluacion.tree</field>
+        <field name="model">unefa.plan.evaluacion</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Plan de Evaluacion">
+<!--
+                <field name="nucleo"/>
+-->
+<!--
+		<field name="carrera"/>
+-->
+<!--
+		<field name="division"/>
+-->
+<!--
+		<field name="sede"/>
+-->
+<!--
+		<field name="regimen"/>
+-->
+<!--
+		<field name="aula"/>
+-->
+<!--
+		<field name="ciProfesor"/>
+-->
+		<field name="materia"/>
+		<field name="corte_id"/>
+<!--
+		<field name="codigoMateria"/>
+-->
+<!--
+		<field name="nombreCoordinador"/>
+-->
+		<field name="seccion"/>
+		<field name="semestre"/>
+<!--
+		<field name="horasSemanales"/>
+-->
+<!--
+		<field name="numeroEstudiantesInscritos"/>
+-->
+<!--
+		<field name="periodoAcademico"/>
+-->
+<!--
+		<field name="nuevo_item_id"/>
+-->
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_unefa_plan_evaluacion">
+        <field name="name">Plan de Evaluacion</field>
+        <field name="res_model">unefa.plan.evaluacion</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem name="GESTION DE CORTE" id="menu_unefa_gestion_corte"  parent="unefa_configuracion.unefa_menu_principal_gestion" sequence="80" /> 
+    <menuitem name="Plan de Evaluacion" id="menu_unefa_pde" parent="menu_unefa_gestion_corte" sequence="10" />
+   <menuitem name="PDE" id="menu_unefa_pde_1" parent="menu_unefa_pde" action="action_unefa_plan_evaluacion" sequence="10" />
+    </data>
+</openerp>
+

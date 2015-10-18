@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_unefa_res_company_profesores,unefa_res_company_profesores,model_res_company,group_unefa_profesores,1,0,0,0
+access_unefa_nucleo_profesores,unefa.nucleo_profesores,model_unefa_nucleo,group_unefa_profesores,1,0,0,0
+access_unefa_carrera_profesores,unefa.carrera_profesores,model_unefa_carrera,group_unefa_profesores,1,0,0,0
+access_unefa_coordinacion_profesores,unefa.coordinacion_profesores,model_unefa_coordinacion,group_unefa_profesores,1,0,0,0
+access_unefa_pisos_profesores,unefa.pisos_profesores,model_unefa_pisos,group_unefa_profesores,1,0,0,0
+access_unefa_aulas_profesores,unefa.aulas_profesores,model_unefa_aulas,group_unefa_profesores,1,0,0,0

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_unefa_horario_form">
+            <field name="name">unefa_horario.form</field>
+            <field name="model">unefa.horario</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Horario">
+                    <header>
+                        <button name="aprobar_horario" string = "Aprobar"/>
+                        <button name="generar_horario" string = "Generar Horario"/>
+                        <field name="state" widget="statusbar" statusbar_visible="borrador,aprobado" />
+                    </header>
+                    <sheet>
+                        <group col="4" colums="4">
+                            <field name="carrera_id" widget="selection"/>
+                            <field name="periodo_id" widget="selection"/>
+                            <field name="semestre_id" widget="selection"/>
+                            <field name="aula_id" />
+                            <field name="fecha" />
+                        </group>
+                        <notebook>
+                            <page string="Horarios">
+                                <field name="horarios_ids">
+                                <form string="Generar horarios">
+                                    <field name="asignatura_id" />
+                                    <field name="profesor_id" />
+                                    <field name="hora_inicio" />
+                                    <field name="hora_final" />
+                                    
+                                </form>
+                                <tree string="cronograma_oferta_ids" editable="bottom">
+                                    <field name="asignatura_id" widget="selection"/>
+                                    <field name="profesor_id" widget="selection"/>
+                                    <field name="hora_inicio" />
+                                    <field name="hora_final" />
+                                </tree>
+                                </field>
+                                    <field name="observaciones" class="oe_inline" placeholder = "Observaciones..."/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+            
+        <record model="ir.actions.act_window" id="action_unefa_horario">
+            <field name="name">unefa_horario</field>
+            <field name="res_model">unefa.horario</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+        </record>
+        
+        <menuitem name="Gestión de horarios" id="gestion_horarios_id" parent="unefa_configuracion.unefa_menu_principal_gestion" sequence="70"/>
+        <menuitem name="Gestión de horarios" id="gestion_horarios_id_desplegable" parent="gestion_horarios_id" />
+        <menuitem name="Horarios" id="horarios_id" parent="gestion_horarios_id_desplegable" action="action_unefa_horario" sequence="20"/>
+        </data>
+</openerp>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp><data>
+
+    <record model="ir.module.category" id="module_category_cfg">
+        <field name="name">CFG ENTIDADES</field>
+        <field name="description">Agrupa modulos para controlar los accesos de los diferentes roles para CFG</field>
+        <field name="sequence">16</field>
+    </record>
+    
+    <record id="group_admin_fci" model="res.groups">
+        <field name="name">ADMINISTRADOR FCI</field>
+        <field name="category_id" ref="module_category_cfg"/>
+    </record>
+    <record id="group_cte" model="res.groups">
+        <field name="name">COMITÉ TÉCNICO EVALUADOR</field>
+        <field name="category_id" ref="module_category_cfg"/>
+    </record>
+    <record id="group_alc_gob" model="res.groups">
+        <field name="name">ALCALDE O GOBERNADOR</field>
+        <field name="category_id" ref="module_category_cfg"/>
+    </record>
+    <record id="group_ing" model="res.groups">
+        <field name="name">INGENIERO DE OBRA</field>
+        <field name="category_id" ref="module_category_cfg"/>
+    </record>
+    <record id="group_asitente_ept" model="res.groups">
+        <field name="name">ASISTENTE EPT</field>
+        <field name="category_id" ref="module_category_cfg"/>
+    </record>
+
+</data></openerp>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_unefa_oferta_academica_form">
+            <field name="name">unefa.oferta_academica.form</field>
+            <field name="model">unefa.oferta_academica</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Ofertas académica">
+                    <header>
+                        <button name="aprobar_oferta_academica" string = "Aprobar"/>
+                        <field name="state" widget="statusbar" statusbar_visible="borrador,aprobado" />
+                    </header>
+                    <sheet>
+                        <group col="4" colums="4">
+                            <field name="carrera_id" widget="selection"/>
+                            <field name="fecha"/>
+                            <field name="periodo_id" widget="selection" on_change="cargar_oferta_academica(periodo_id)"/>
+                        </group>
+                        <notebook>
+                            <page string="Cronograma de inscripción">
+                                <field name="cronograma_oferta_ids" >
+                                <form string="Cronograma de inscripción">
+<!--
+                                    <field name="semestre_id" />
+-->
+                                    <field name="asignatura_id" />
+                                    <field name="alumnos_inscritos" />
+                                    <field name="cantidad_secciones" />
+                                </form>
+                                <tree string="cronograma_oferta_ids" editable="bottom">
+<!--
+                                    <field name="semestre_id" widget="selection"/>
+-->
+                                    <field name="asignatura_id" widget="selection"/>
+                                    <field name="alumnos_inscritos"/>
+                                    <field name="cantidad_secciones"/>
+                                </tree>
+                                </field>
+                                    <field name="observaciones" class="oe_inline" placeholder = "Observaciones..."/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+            
+        <record model="ir.actions.act_window" id="action_unefa_oferta_academica">
+            <field name="name">Oferta Academica</field>
+            <field name="res_model">unefa.oferta_academica</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+        </record>
+        
+        <menuitem name="Gestión oferta académica" id="gestion_oferta_academica_id" parent="unefa_configuracion.unefa_menu_principal_gestion" sequence="60" />
+        <menuitem name="Gestión oferta académica" id="gestion_oferta_academica_id_desplegable" parent="gestion_oferta_academica_id" />
+        <menuitem name="Oferta académica" id="oferta_academica_id" parent="gestion_oferta_academica_id_desplegable" action="action_unefa_oferta_academica" sequence="15"/>
+        </data>
+</openerp>

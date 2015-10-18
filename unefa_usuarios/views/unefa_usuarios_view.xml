@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <openerp>
+
+     <data>
+
+    
+    
+    <record model="ir.ui.view" id="view_unefa_estudiantes_form">
+        <field name="name">unefa_estudiantes.form</field>
+        <field name="model">unefa.estudiantes</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="unefa_estudiantes">
+                <sheet>
+                    
+                        <field name="image" widget='image' class="oe_avatar oe_left" options='{"preview_image": "image_medium"}'/>
+                        <div class="oe_title">
+                            <label for="name" string="Nombres y Apellidos" class="oe_edit_only"/>
+                            <h1><field name="name"/></h1>
+                            <field name="email" invisible="1"/>
+                            <label for="login" class="oe_edit_only" string="Email Address"/>
+                            <h2><field name="login" on_change="on_change_login(login)"/></h2>
+                            <field name="active"/>
+                        </div>
+                    
+                    
+                    <group col="4" columns="4">
+                       <field name="nacionalidad" select="0" placeholder="Seleccione su nacionalidad"/>
+                        <field name="cedula"  required="1" placeholder="Escriba su cedula de identidad"/>
+                        <field name="fecha" placeholder="seleccione" string="Fecha de Nacimiento"/>
+                        <field name="sexo" select="0" placeholder="Seleccione su Sexo"/>
+                        <field name="telefono_local" select="0" data-inputmask="'mask': '9999-999-9999'"/>
+                        <field name="telefono" select="0" data-inputmask="'mask': '9999-999-9999'" />
+                        <field name="estado_civil" select="0" placeholder="Seleccione su Estado Civil"/>
+                        <field name="carrera_id" select="0"/>
+                        <field name="regimen" select="0" placeholder="Seleccione el Régimen de Estudio"/>
+                        <field name="pensum_id" string="Pensum" select="0"/>
+                       
+                    </group>
+                </sheet>                
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_unefa_estudiantes_tree">
+         <field name="name">unefa_estudiantes.tree</field>
+        <field name="model">unefa.estudiantes</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="unefa_estudiantes">
+                <field name="name" string="Nombre Completo"/>
+                <field name="nacionalidad" />
+                <field name="cedula" />
+            </tree>
+        </field>
+    </record>
+      <record model="ir.actions.act_window" id="action_unefa_estudiantes">
+        <field name="name">Unefa Estudiantes</field>
+        <field name="res_model">unefa.estudiantes</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    
+    <record model="ir.ui.view" id="view_unefa_profesores_form">
+        <field name="name">unefa_profesores.form</field>
+        <field name="model">unefa.profesores</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="unefa_profesores">
+                <sheet>
+                    
+                    <div class="oe_right oe_button_box">
+                            <button name="action_get_attachment_tree_view" 
+                                class="oe_stat_button"
+                                icon="fa-book"
+                                type="object">
+                                <field name="attachment_number" widget="statinfo" string="Documentos"/>
+                            </button>
+                        </div>
+                        <field name="image" widget='image' class="oe_avatar oe_left" options='{"preview_image": "image_medium"}'/>
+                        <div class="oe_title">
+                            <label for="name" string="Nombres y Apellidos" class="oe_edit_only"/>
+                            <h1><field name="name"/></h1>
+                            <field name="email" invisible="1"/>
+                            <label for="login" class="oe_edit_only" string="Email Address"/>
+                            <h2><field name="login" on_change="on_change_login(login)"/></h2>
+                            <field name="active"/>
+                        </div>
+                        
+                    
+                    <group col="4" columns="4">
+                        <field name="nacionalidad" select="0" placeholder="Seleccione su nacionalidad"/>
+                        <field name="cedula" required="1" placeholder="Escriba su cedula de identidad" />
+                        <field name="fecha" placeholder="seleccione" string="Fecha de Nacimiento"/>
+                        <field name="sexo" select="0" placeholder="Seleccione su sexo"/>
+                        <field name="telefono_local" select="0"  data-inputmask="'mask': '9999-999-9999'"/>
+                        <field name="telefono" select="0"  data-inputmask="'mask': '9999-999-9999'"/>
+                        <field name="estado_civil" select="0" placeholder="Seleccione su Estado Civil"/>
+                        <field name="carrera_id" select="0"/>
+                        <field name="regimen" select="0" placeholder="Seleccione el Régimen de Estudio"/>
+                       
+                    </group>
+                </sheet>                
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_unefa_profesores_tree">
+         <field name="name">unefa_profesores.tree</field>
+        <field name="model">unefa.profesores</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="unefa_profesores">
+                <field name="name" string="Nombre Completo"/>
+                <field name="nacionalidad" />
+                <field name="cedula" />
+            </tree>
+        </field>
+    </record>
+      <record model="ir.actions.act_window" id="action_unefa_profesores">
+        <field name="name">Unefa Profesores</field>
+        <field name="res_model">unefa.profesores</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    
+    <record model="ir.ui.view" id="view_unefa_coordinador_form">
+        <field name="name">unefa_coordinador.form</field>
+        <field name="model">unefa.coordinador</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="unefa_coordinador">
+                <sheet>
+                     <div class="oe_right oe_button_box">
+                            <button name="action_get_attachment_tree_view" 
+                                class="oe_stat_button"
+                                icon="fa-book"
+                                type="object">
+                                <field name="attachment_number" widget="statinfo" string="Documentos"/>
+                            </button>
+                        </div>
+                        <field name="image" widget='image' class="oe_avatar oe_left" options='{"preview_image": "image_medium"}'/>
+                        <div class="oe_title">
+                            <label for="name" string="Nombres y Apellidos" class="oe_edit_only"/>
+                            <h1><field name="name"/></h1>
+                            <field name="email" invisible="1"/>
+                            <label for="login" class="oe_edit_only" string="Email Address"/>
+                            <h2><field name="login" on_change="on_change_login(login)"/></h2>
+                            <field name="active"/>
+                        </div>
+                        
+                    
+                    <group col="4" columns="4">
+                        <field name="nacionalidad" select="0" placeholder="Seleccione su nacionalidad"/>
+                        <field name="cedula" required="1" placeholder="Escriba su cedula de identidad"/>
+                        <field name="fecha" placeholder="seleccione" string="Fecha de Nacimiento"/>
+                        <field name="sexo" select="0" placeholder="Seleccione su sexo"/>
+                        <field name="telefono_local" select="0" data-inputmask="'mask': '9999-999-9999'" />
+                        <field name="telefono" select="0" data-inputmask="'mask': '9999-999-9999'" />
+                        <field name="estado_civil" select="0" placeholder="Seleccione su Estado Civil"/>
+                        <field name="carrera_id" select="0"/>
+                        <field name="regimen" select="0" placeholder="Seleccione el Régimen de Estudio"/>
+                    </group>
+                </sheet>                
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_unefa_coordinador_tree">
+         <field name="name">unefa_coordinador.tree</field>
+        <field name="model">unefa.coordinador</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="unefa_coordinador">
+                <field name="name" string="Nombre Completo"/>
+                <field name="nacionalidad" />
+                <field name="cedula" />
+            </tree>
+        </field>
+    </record>
+      <record model="ir.actions.act_window" id="action_unefa_coordinador">
+        <field name="name">Unefa Coordinador</field>
+        <field name="res_model">unefa.coordinador</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record model="ir.ui.view" id="view_unefa_secretariado_form">
+        <field name="name">unefa_secretariado.form</field>
+        <field name="model">unefa.secretariado</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="unefa_secretaria">
+                <sheet>
+                     <div class="oe_right oe_button_box">
+                            <button name="action_get_attachment_tree_view" 
+                                class="oe_stat_button"
+                                icon="fa-book"
+                                type="object">
+                                <field name="attachment_number" widget="statinfo" string="Documentos"/>
+                            </button>
+                        </div>
+                        <field name="image" widget='image' class="oe_avatar oe_left" options='{"preview_image": "image_medium"}'/>
+                        <div class="oe_title">
+                            <label for="name" string="Nombres y Apellidos" class="oe_edit_only"/>
+                            <h1><field name="name"/></h1>
+                            <field name="email" invisible="1"/>
+                            <label for="login" class="oe_edit_only" string="Email Address"/>
+                            <h2><field name="login" on_change="on_change_login(login)"/></h2>
+                            <field name="active"/>
+                        </div>
+                        
+                    
+                    <group col="4" columns="4">
+                        <field name="nacionalidad" select="0" placeholder="Seleccione su nacionalidad"/>
+                        <field name="cedula" required="1" placeholder="Escriba su cedula de identidad"/>
+                        <field name="fecha" placeholder="seleccione" string="Fecha de Nacimiento"/>
+                        <field name="sexo" select="0" placeholder="Seleccione su sexo"/>
+                        <field name="telefono_local" select="0" data-inputmask="'mask': '9999-999-9999'" />
+                        <field name="telefono" select="0" data-inputmask="'mask': '9999-999-9999'" />
+                        <field name="estado_civil" select="0" placeholder="Seleccione su Estado Civil"/>
+                        <field name="carrera_id" select="0"/>
+                        <field name="regimen" select="0" placeholder="Seleccione el Régimen de Estudio"/>
+                    </group>
+                </sheet>                
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_unefa_secretariado_tree">
+         <field name="name">unefa_secretariado.tree</field>
+        <field name="model">unefa.secretariado</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="unefa_secretaria">
+                <field name="name" string="Nombre Completo"/>
+                <field name="nacionalidad" />
+                <field name="cedula" />
+            </tree>
+        </field>
+    </record>
+      <record model="ir.actions.act_window" id="action_unefa_secretariado">
+        <field name="name">Unefa Secretariado</field>
+        <field name="res_model">unefa.secretariado</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    
+    <record model="ir.ui.view" id="view_unefa_evaluador_form">
+        <field name="name">unefa_evaluador.form</field>
+        <field name="model">unefa.evaluador</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="unefa_evaluador">
+                <sheet>
+                     <div class="oe_right oe_button_box">
+                            <button name="action_get_attachment_tree_view" 
+                                class="oe_stat_button"
+                                icon="fa-book"
+                                type="object">
+                                <field name="attachment_number" widget="statinfo" string="Documentos"/>
+                            </button>
+                        </div>
+                        <field name="image" widget='image' class="oe_avatar oe_left" options='{"preview_image": "image_medium"}'/>
+                        <div class="oe_title">
+                            <label for="name" string="Nombres y Apellidos" class="oe_edit_only"/>
+                            <h1><field name="name"/></h1>
+                            <field name="email" invisible="1"/>
+                            <label for="login" class="oe_edit_only" string="Email Address"/>
+                            <h2><field name="login" on_change="on_change_login(login)"/></h2>
+                            <field name="active"/>
+                        </div>
+                       
+                    
+                    <group col="4" columns="4">
+                        <field name="nacionalidad" select="0" placeholder="Seleccione su nacionalidad"/>
+                        <field name="cedula" required="1" placeholder="Escriba su cedula de identidad"/>
+                        <field name="fecha" placeholder="seleccione" string="Fecha de Nacimiento"/>
+                        <field name="sexo" select="0" placeholder="Seleccione su sexo"/>
+                        <field name="telefono_local" select="0" data-inputmask="'mask': '9999-999-9999'" />
+                        <field name="telefono" select="0" data-inputmask="'mask': '9999-999-9999'" />
+                        <field name="estado_civil" select="0" placeholder="Seleccione su Estado Civil"/>
+                        <field name="carrera_id" select="0"/>
+                        <field name="regimen" select="0" placeholder="Seleccione el Régimen de Estudio"/>
+                   
+                    </group>
+                </sheet>                
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_unefa_evaluador_tree">
+         <field name="name">unefa_evaluador.tree</field>
+        <field name="model">unefa.evaluador</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="unefa_evaluador">
+                <field name="name" string="Nombre Completo"/>
+                <field name="nacionalidad" />
+                <field name="cedula" />
+            </tree>
+        </field>
+    </record>
+      <record model="ir.actions.act_window" id="action_unefa_evaluador">
+        <field name="name">Unefa Evaluador</field>
+        <field name="res_model">unefa.evaluador</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    
+   
+    
+     <menuitem name="Usuarios" id="menu_unefa_usuarios_inicio"  parent="unefa_configuracion.unefa_menu_principal_gestion" sequence="10" />
+     <menuitem name="Usuarios" id="menu_unefa_usuarios_desplegar"  parent="menu_unefa_usuarios_inicio" sequence="10" />
+<!--
+     <menuitem name="Registro Usuarios" id="menu_unefa_usuarios"  parent="menu_unefa_usuarios_desplegar" action="action_unefa_usuarios" sequence="10" />
+-->
+     <menuitem name="Registro Estudiantes" id="menu_unefa_estudiantes"  parent="menu_unefa_usuarios_desplegar" action="action_unefa_estudiantes" sequence="20" />
+     <menuitem name="Registro Profesores" id="menu_unefa_profesores"  parent="menu_unefa_usuarios_desplegar" action="action_unefa_profesores" sequence="30" />
+     <menuitem name="Registro Coordinador" id="menu_unefa_coordinador"  parent="menu_unefa_usuarios_desplegar" action="action_unefa_coordinador" sequence="40" />
+     <menuitem name="Registro Secretariado" id="menu_unefa_secretariado"  parent="menu_unefa_usuarios_desplegar" action="action_unefa_secretariado" sequence="50" />
+     <menuitem name="Registro Evaluador" id="menu_unefa_evaluador"  parent="menu_unefa_usuarios_desplegar" action="action_unefa_evaluador" sequence="60" />
+    </data>
+</openerp>
+

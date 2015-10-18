@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_unefa_materia_coor,unefa.materia,model_unefa_materia,unefa_configuracion.group_unefa_coordinador,1,1,1,1
+access_unefa_semestre_coor,unefa.semestre,model_unefa_semestre,unefa_configuracion.group_unefa_coordinador,1,1,1,1
+access_unefa_pensum_coor,unefa.pensum,model_unefa_pensum,unefa_configuracion.group_unefa_coordinador,1,1,1,1
+access_unefa_contenido_coor,unefa.contenido,model_unefa_contenido,unefa_configuracion.group_unefa_coordinador,1,1,1,1
+access_unefa_subcontenido_coor,Unefa.subcontenido,model_unefa_subcontenido,unefa_configuracion.group_unefa_coordinador,1,1,1,1
